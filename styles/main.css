@@ -8,4 +8,6 @@ body {
   height: 100vh;
   font-family: sans-serif;
   box-sizing: border-box;
+  background-image: url(../assets/background.svg);
+  background-size: cover;
 }/*# sourceMappingURL=main.css.map */
