@@ -20,6 +20,11 @@
 			cursor: pointer;
 		}
 	}
+	&-warning {
+		text-align: center;
+		font-size: 13px;
+		color: #ff0000
+	}
 	&-input > input {
 		background: #180c69;
 		border: 0.80px solid #361bc3;

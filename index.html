@@ -48,6 +48,7 @@
 								<img class="add-button__image" src="./assets/icons/scenario-icons/plus.svg"></img>
 								<span class="add-button__body">Добавить сценарий</span>
 							</button>
+							<span class="scenarios__add-warning">Достигнуто максимальное количество сценариев!</span>
 							<div class="scenarios__add-input">
 								<input placeholder="Напиши название" type="text" class="add-input__input">
 								<div class="add-input__buttons">
@@ -73,37 +74,39 @@
 									<span class="delete-button__text">Очистить список</span>
 							</button>
 						</div>
-						<div class="tasks__tasks-list">
-							<div class="tasks-list__task">
-								<div class="task-left">
-									<button class="task-left__button-circle">
-										<img class="button-circle__image" src="./assets/icons/task-icons/circle.svg">
-									</button>
-									<span class="task-left__text">Сделать техническое задание по теме</span>
+						<div class="tasks__bottom">
+							<div class="tasks__tasks-list">
+								<div class="tasks-list__task">
+									<div class="task-left">
+										<button class="task-left__button-circle">
+											<img class="button-circle__image" src="./assets/icons/task-icons/circle.svg">
+										</button>
+										<span class="task-left__text">Сделать техническое задание по теме</span>
+									</div>
+									<div class="task-right">
+										<span class="task-right__data">22:30 28.06.2024</span>
+										<button class="task-right__button-important">
+											<img class="button-important__image" src="./assets/icons/task-icons/star.svg">
+										</button>
+										<button class="task-right__button-delete">
+											<img class="button-delete__image" src="./assets/icons/task-icons/delete.svg">
+										</button>
+									</div>
 								</div>
-								<div class="task-right">
-									<span class="task-right__data">22:30 28.06.2024</span>
-									<button class="task-right__button-important">
-										<img class="button-important__image" src="./assets/icons/task-icons/star.svg">
-									</button>
-									<button class="task-right__button-delete">
+							</div>
+							<div class="tasks__completed-tasks">
+								<button class="completed-tasks__button">
+									<img class="completed-tasks__image" src="./assets/icons/other-icons/chevron.svg">
+									<span class="completed-tasks__text">Выполненные задачи</span>
+								</button>
+							</div>
+							<div class="tasks__completed-tasks-list">
+								<div class="completed-tasks-list__completed-task">
+									<span class="completed-task__text">Сделать техническое задание по теме</span>
+									<button class="completed-task__button-delete">
 										<img class="button-delete__image" src="./assets/icons/task-icons/delete.svg">
 									</button>
 								</div>
-							</div>
-						</div>
-						<div class="tasks__completed-tasks">
-							<button class="completed-tasks__button">
-								<img class="completed-tasks__image" src="./assets/icons/other-icons/chevron.svg">
-								<span class="completed-tasks__text">Выполненные задачи</span>
-							</button>
-						</div>
-						<div class="tasks__completed-tasks-list">
-							<div class="completed-tasks-list__completed-task">
-								<span class="completed-task__text">Сделать техническое задание по теме</span>
-								<button class="completed-task__button-delete">
-									<img class="button-delete__image" src="./assets/icons/task-icons/delete.svg">
-								</button>
 							</div>
 						</div>
 					</div>

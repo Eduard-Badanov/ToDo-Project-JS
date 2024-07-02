@@ -8,6 +8,24 @@
 	flex-direction: column;
 	gap: 30px;
 }
+.tasks__bottom {
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	gap: 30px;
+	max-height: 431px;
+	overflow-y: overlay;
+	padding-right: 10px;
+	&::-webkit-scrollbar {
+		background: none;
+		width: 5px;
+		&-thumb {
+			border-radius: 10px;
+			background: #1acd81;
+			outline: .8px solid #43e5a0;
+		}
+	}
+}
 .tasks {
 	&__title {
 		font-size: 21px;

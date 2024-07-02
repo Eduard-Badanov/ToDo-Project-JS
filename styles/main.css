@@ -103,6 +103,11 @@
   background: #0fa968;
   cursor: pointer;
 }
+.scenarios__add-warning {
+  text-align: center;
+  font-size: 13px;
+  color: #ff0000;
+}
 .scenarios__add-input > input {
   background: #180c69;
   border: 0.8px solid #361bc3;
@@ -255,6 +260,25 @@
   justify-content: flex-start;
   flex-direction: column;
   gap: 30px;
+}
+
+.tasks__bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 30px;
+  max-height: 431px;
+  overflow-y: overlay;
+  padding-right: 10px;
+}
+.tasks__bottom::-webkit-scrollbar {
+  background: none;
+  width: 5px;
+}
+.tasks__bottom::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #1acd81;
+  outline: 0.8px solid #43e5a0;
 }
 
 .tasks__title {
