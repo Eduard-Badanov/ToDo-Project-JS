@@ -1,0 +1,72 @@
+@import '_task.scss';
+@import '_completed-task.scss';
+
+.todo__tasks {
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	flex-direction: column;
+	gap: 30px;
+}
+.tasks {
+	&__title {
+		font-size: 21px;
+	}
+	&__add-task {
+		display: flex;
+		align-items: center;
+		flex-direction: row;
+		& > input {
+			background: #180c69;
+			border: 0.8px solid #361bc3;
+			border-radius: 8px;
+			padding: 9px 12px;
+			width: 400px;
+			height: 40px;
+			color: #fff;
+			outline: none;
+			font-size: 16px;
+			&::placeholder {
+				color: #B3B3B3;
+				font-size: 12.8px;
+			}	
+		}
+		& > button {
+			font-size: 16px;
+			border-radius: 8px;
+			padding: 8px;
+			width: max-content;
+			height: 40px;
+			background: #1acd81;
+			transition: all .15s ease-in-out;
+			color: #03301f;
+			margin-left: -18px;
+			&:hover {
+				background: #0fa968;
+				cursor: pointer;
+			}
+		}
+	}
+	&__sort-delete,
+	&__completed-tasks {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		flex-direction: row;
+		gap: 20px;
+		& > button {
+			display: flex;
+			align-items: center;
+			flex-direction: row;
+			gap: 5px;
+			& > span {
+				font-size: 14px;
+				color: #fff;
+			}
+			&:hover {
+				transition: all 1.5s ease-in-out;
+				cursor: pointer;
+			}
+		}
+	}
+}

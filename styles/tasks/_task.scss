@@ -1,0 +1,48 @@
+@mixin flexRowCenter {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.tasks__tasks-list {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	gap: 15px;
+	width: 530px;
+}
+.tasks-list {
+	&__task {
+		@include flexRowCenter;
+		justify-content: space-between;
+		background: #11563a;
+		border: 0.8px solid #43e5a0;
+		border-radius: 8px;
+		padding: 0px 10px 0px 8px;
+		width: 100%;
+		height: 40px;
+	}
+}
+.task-left,
+.task-right {
+	@include flexRowCenter;
+	justify-content: space-between;
+	gap: 5px;
+	& > button {
+		height: 24px;
+		&:hover {
+			cursor: pointer;
+		}
+	}
+	&__text {
+		font-size: 16px;
+		max-width: 300px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		font-family: 'Inter';
+	}
+	&__data {
+		font-size: 13px;
+	}
+}

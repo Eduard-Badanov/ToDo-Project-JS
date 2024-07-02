@@ -1,0 +1,31 @@
+.tasks__completed-tasks-list {
+	display: flex;
+	align-items: flex-end;
+	flex-direction: column;
+	gap: 15px;
+	width: 100%;
+	& > div {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		background: #11563a;
+		border: 0.8px solid #43e5a0;
+		border-radius: 8px;
+		padding: 0px 10px 0px 14px;
+		width: 500px;
+		height: 40px;
+		& > span {
+			max-width: 400px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+		& > button {
+			height: 22px;
+			&:hover {
+				cursor: pointer;
+			}
+		}
+	}
+}
