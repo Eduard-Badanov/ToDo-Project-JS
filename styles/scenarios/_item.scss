@@ -1,0 +1,55 @@
+.items-list__item-button,
+.items-list__item-button-created {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	flex-direction: row;
+	width: 185px;
+	height: 32px;
+	padding: 8px 7px;
+	background: none;
+	gap: 10px;
+	transition: all .1s ease-in;
+	border-radius: 5px;
+	& > img {
+		width: 16px;
+		height: 16px;
+	}
+	& > span, & > div > span {
+		font-size: 16px;
+		color: #fff;
+		max-width: 150px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		font-family: 'Inter';
+	}
+	&:hover, &.item-active {
+		background: rgba(255, 255, 255, 0.1); 
+		cursor: pointer;
+	}
+}
+.item-button-created__prepend {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	flex-direction: row;
+	gap: 10px;
+	width: 185px;
+}
+.items-list__item-button-created {
+	display: flex;
+	gap: 0;
+	& > img {
+		opacity: 0;
+	}
+	&:hover {
+		& div > span {
+			max-width: 130px;
+		}
+		& > img {
+			transition: all .1s ease-in-out;
+			opacity: 1;
+		}
+	}
+}

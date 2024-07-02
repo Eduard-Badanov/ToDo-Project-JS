@@ -1,13 +1,207 @@
-*, *::before, *::after {
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+.todo__main-block {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-left: 10px solid #43e5a0;
+  border-radius: 20px;
+  width: 1244px;
+  height: 700px;
+  -webkit-backdrop-filter: blur(150px);
+          backdrop-filter: blur(150px);
+  background: rgba(3, 48, 31, 0.01);
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.25);
+}
+
+.todo__content {
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+  margin-top: 45px;
+}
+
+.items-list__item-button,
+.items-list__item-button-created {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  width: 185px;
+  height: 32px;
+  padding: 8px 7px;
+  background: none;
+  gap: 10px;
+  transition: all 0.1s ease-in;
+  border-radius: 5px;
+}
+.items-list__item-button > img,
+.items-list__item-button-created > img {
+  width: 16px;
+  height: 16px;
+}
+.items-list__item-button > span, .items-list__item-button > div > span,
+.items-list__item-button-created > span,
+.items-list__item-button-created > div > span {
+  font-size: 16px;
+  color: #fff;
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: "Inter";
+}
+.items-list__item-button:hover, .items-list__item-button.item-active,
+.items-list__item-button-created:hover,
+.items-list__item-button-created.item-active {
+  background: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+
+.item-button-created__prepend {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 10px;
+  width: 185px;
+}
+
+.items-list__item-button-created {
+  display: flex;
+  gap: 0;
+}
+.items-list__item-button-created > img {
+  opacity: 0;
+}
+.items-list__item-button-created:hover div > span {
+  max-width: 130px;
+}
+.items-list__item-button-created:hover > img {
+  transition: all 0.1s ease-in-out;
+  opacity: 1;
+}
+
+.scenarios__add {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.scenarios__add-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  background: #1acd81;
+  border-radius: 8px;
+  padding: 8px;
+  transition: all 0.15s ease-in-out;
+}
+.scenarios__add-button > span {
+  font-size: 16px;
+  color: #03301f;
+}
+.scenarios__add-button:hover {
+  background: #0fa968;
+  cursor: pointer;
+}
+.scenarios__add-input > input {
+  background: #180c69;
+  border: 0.8px solid #361bc3;
+  border-radius: 8px;
+  padding: 9px 12px;
+  width: 100%;
+  height: 32px;
+  color: #fff;
+  outline: none;
+  font-size: 16px;
+}
+.scenarios__add-input > input::-moz-placeholder {
+  color: #B3B3B3;
+  font-size: 12.8px;
+}
+.scenarios__add-input > input::placeholder {
+  color: #B3B3B3;
+  font-size: 12.8px;
+}
+.scenarios__add-input > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 6.4px;
+}
+.scenarios__add-input > div > button {
+  font-size: 16px;
+  border-radius: 8px;
+  padding: 8px;
+  width: 100px;
+  height: 32px;
+  background: #1acd81;
+  transition: all 0.15s ease-in-out;
+  color: #03301f;
+}
+.scenarios__add-input > div > button:hover {
+  background: #0fa968;
+  cursor: pointer;
+}
+
+.todo__scenarios {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 215px;
+}
+
+.scenarios__title {
+  font-size: 21px;
+  padding-bottom: 8px;
+}
+.scenarios__items-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 8px;
+  padding: 15px 15px 20px 15px;
+  background: rgba(16, 133, 84, 0.6);
+  gap: 7px;
+}
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  height: 100vh;
   margin: 0;
   padding: 0;
-  height: 100vh;
-  font-family: sans-serif;
-  box-sizing: border-box;
   background-image: url(../assets/background.svg);
   background-size: cover;
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 16px;
+  color: #fff;
+}
+
+button {
+  border: 0;
+}
+
+.todo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.todo__title {
+  margin-bottom: 45px;
+  font-weight: 500;
+  font-style: 40px;
+  text-transform: uppercase;
 }/*# sourceMappingURL=main.css.map */
