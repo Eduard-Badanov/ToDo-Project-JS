@@ -208,14 +208,41 @@
 .task-right > button:hover {
   cursor: pointer;
 }
+.task-left__body,
+.task-right__body {
+  width: 300px;
+  overflow: hidden;
+}
 .task-left__text,
 .task-right__text {
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
   font-size: 16px;
-  max-width: 300px;
-  overflow: hidden;
-  text-overflow: ellipsis;
   white-space: nowrap;
   font-family: "Inter";
+  animation-duration: 5s;
+  animation-name: slide;
+}
+@keyframes slide {
+  0% {
+    transform: translateX(0%);
+  }
+  20% {
+    transform: translateX(-100%);
+  }
+  40% {
+    display: none;
+  }
+  60% {
+    transform: translateX(100%);
+  }
+  80% {
+    display: block;
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }
 .task-left__data,
 .task-right__data {
@@ -269,6 +296,7 @@
   gap: 30px;
   max-height: 431px;
   overflow-y: overlay;
+  overflow-x: hidden;
   padding-right: 10px;
 }
 .tasks__bottom::-webkit-scrollbar {
