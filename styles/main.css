@@ -5,8 +5,8 @@
   justify-content: center;
   border-left: 10px solid #43e5a0;
   border-radius: 20px;
-  width: 1244px;
   height: 700px;
+  padding: 0 200px;
   -webkit-backdrop-filter: blur(150px);
           backdrop-filter: blur(150px);
   background: rgba(3, 48, 31, 0.01);
@@ -20,6 +20,17 @@
   margin-top: 45px;
 }
 
+@media screen and (width <= 1500px) {
+  .todo__main-block {
+    padding: 0 150px;
+  }
+}
+@media screen and (width <= 1350px) {
+  .todo__main-block {
+    height: 600px;
+    padding: 0 100px;
+  }
+}
 .items-list__item-button,
 .items-list__item-button-created {
   display: flex;
@@ -198,6 +209,8 @@
   align-items: center;
   gap: 20px;
   width: 215px;
+  height: -moz-max-content;
+  height: max-content;
 }
 
 .scenarios__title {
@@ -372,6 +385,8 @@
   justify-content: flex-start;
   flex-direction: column;
   gap: 30px;
+  height: -moz-max-content;
+  height: max-content;
 }
 
 .tasks__bottom {
@@ -463,6 +478,10 @@
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+* {
+  outline: 3px solid green;
 }
 
 body {

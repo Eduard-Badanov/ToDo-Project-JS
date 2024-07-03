@@ -4,8 +4,9 @@
 	justify-content: center;
 	border-left: 10px solid #43e5a0;
 	border-radius: 20px;
-	width: 1244px;
+	// width: 1244px;
 	height: 700px;
+	padding: 0 200px;
 	backdrop-filter: blur(150px);
 	background: rgba(3, 48, 31, 0.01);
 	box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.25);
@@ -15,4 +16,15 @@
 	flex-direction: row;
 	gap: 100px;
 	margin-top: 45px;
+}
+@media screen and (width <= 1500px) {
+	.todo__main-block {
+		padding: 0 150px;
+	}	
+}
+@media screen and (width <= 1350px) {
+	.todo__main-block {
+		height: 600px;
+		padding: 0 100px;
+	}	
 }

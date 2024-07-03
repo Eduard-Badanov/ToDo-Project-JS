@@ -11,6 +11,7 @@
 	@include flexColumnCenter();
 	gap: 20px;
 	width: 215px;
+	height: max-content;
 }
 .scenarios {
 	&__title {

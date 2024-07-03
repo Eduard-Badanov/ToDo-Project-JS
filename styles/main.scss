@@ -8,6 +8,9 @@
 *::after {
 	box-sizing: border-box;
 }
+* {
+	outline: 3px solid green
+}
 body {
 	display: flex;
 	justify-content: center;
