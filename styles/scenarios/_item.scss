@@ -10,18 +10,52 @@
 	gap: 10px;
 	transition: all .1s ease-in;
 	border-radius: 5px;
+	& > div, & > div > div {
+		display: flex;
+		justify-content: start;
+		width: 150px;
+		overflow: hidden;
+	}
+	&.animated > div > span, &.animated > div > div > span {
+		animation-duration: 10s;
+		animation-name: slide;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+	}
+	@keyframes slide {
+		0% {
+			transform: translateX(0);
+		}
+		53% {
+			transform: translateX(-125%);
+			opacity: 1;
+		}
+		54% {
+			opacity: 0;
+		}
+		61% {
+			transform: translateX(110%);
+			opacity: 0;
+		}
+		65% {
+			opacity: 1;
+		}
+		100% {
+			transform: translateX(0);
+		}
+	}
 	& > img {
 		width: 16px;
 		height: 16px;
 	}
-	& > span, & > div > span {
+	& > span, & > div > span, & > div > div > span {
+		position: relative;
+		display: flex;
+		flex-direction: row-reverse;
 		font-size: 16px;
-		color: #fff;
-		max-width: 150px;
-		overflow: hidden;
-		text-overflow: ellipsis;
 		white-space: nowrap;
 		font-family: 'Inter';
+		color: #fff;
 	}
 	&:hover, &.item-active {
 		background: rgba(255, 255, 255, 0.1); 
@@ -50,5 +84,9 @@
 			transition: all .1s ease-in-out;
 			opacity: 1;
 		}
+	}
+	&.item-active > img {
+		transition: all .1s ease-in-out;
+		opacity: 1;
 	}
 }
