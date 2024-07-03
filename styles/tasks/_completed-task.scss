@@ -63,3 +63,11 @@
 		}
 	}
 }
+@media screen and (width <= 1150px) {
+	.tasks__completed-tasks-list > div {
+		width: 450px;
+		& > div {
+			width: 350px;
+		}
+	}
+}

@@ -31,6 +31,22 @@
     padding: 0 100px;
   }
 }
+@media screen and (width <= 1150px) {
+  .todo__main-block {
+    height: 600px;
+    padding: 0 80px;
+  }
+}
+@media screen and (width <= 1050px) {
+  .todo__content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .todo__main-block {
+    height: -moz-max-content;
+    height: max-content;
+  }
+}
 .items-list__item-button,
 .items-list__item-button-created {
   display: flex;
@@ -313,6 +329,14 @@
   font-size: 13px;
 }
 
+@media screen and (width <= 1150px) {
+  .tasks__tasks-list {
+    width: 480px;
+  }
+  .task-left__body {
+    width: 250px;
+  }
+}
 .tasks__completed-tasks-list {
   display: flex;
   align-items: flex-end;
@@ -379,6 +403,14 @@
   cursor: pointer;
 }
 
+@media screen and (width <= 1150px) {
+  .tasks__completed-tasks-list > div {
+    width: 450px;
+  }
+  .tasks__completed-tasks-list > div > div {
+    width: 350px;
+  }
+}
 .todo__tasks {
   display: flex;
   align-items: flex-start;
@@ -474,6 +506,16 @@
   cursor: pointer;
 }
 
+@media screen and (width <= 1150px) {
+  .tasks__add-task > input {
+    width: 350px;
+  }
+}
+@media screen and (width <= 1050px) {
+  .tasks__title {
+    margin: 0 auto;
+  }
+}
 *,
 *::before,
 *::after {
@@ -515,6 +557,13 @@ button {
 .todo__title {
   margin-bottom: 45px;
   font-weight: 500;
-  font-style: 40px;
+  font-size: 40px;
   text-transform: uppercase;
+}
+
+@media screen and (width <= 1450px) {
+  .todo__title {
+    margin-bottom: 30px;
+    font-size: 32px;
+  }
 }/*# sourceMappingURL=main.css.map */

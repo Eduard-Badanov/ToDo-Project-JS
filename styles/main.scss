@@ -39,6 +39,12 @@ button {
 .todo__title {
 	margin-bottom: 45px;
 	font-weight: 500;
-	font-style: 40px;
+	font-size: 40px;
 	text-transform: uppercase;
+}
+@media screen and (width <= 1450px) {
+	.todo__title {
+		margin-bottom: 30px;
+		font-size: 32px;
+	}
 }

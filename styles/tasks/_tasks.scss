@@ -90,3 +90,13 @@
 		}
 	}
 }
+@media screen and (width <= 1150px) {
+	.tasks__add-task > input {
+		width: 350px;
+	}
+}
+@media screen and (width <= 1050px) {
+	.tasks__title {
+		margin: 0 auto;
+	}
+}
