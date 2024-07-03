@@ -1,0 +1,1 @@
+if (document.querySelector('.task-left__text').clientWidth > 300) document.querySelector('.tasks-list__task').classList.add('animated')
