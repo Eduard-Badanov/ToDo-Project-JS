@@ -15,11 +15,45 @@
 		padding: 0px 10px 0px 14px;
 		width: 500px;
 		height: 40px;
-		& > span {
-			max-width: 400px;
+		&.animated > div > span {
+			animation-duration: 12.5s;
+			animation-name: slide;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite;
+		}
+		@keyframes slide {
+			0% {
+				transform: translateX(0);
+			}
+			53% {
+				transform: translateX(-125%);
+				opacity: 1;
+			}
+			54% {
+				opacity: 0;
+			}
+			61% {
+				transform: translateX(110%);
+				opacity: 0;
+			}
+			65% {
+				opacity: 1;
+			}
+			100% {
+				transform: translateX(0);
+			}
+		}
+		& > div {
+			display: flex;
+			justify-content: start;
+			width: 400px;
 			overflow: hidden;
-			text-overflow: ellipsis;
-			white-space: nowrap;
+			& > span {
+				position: relative;
+				display: flex;
+				flex-direction: row-reverse;
+				white-space: nowrap;
+			}
 		}
 		& > button {
 			height: 22px;
