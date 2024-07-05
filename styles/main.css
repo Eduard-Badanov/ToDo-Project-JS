@@ -215,6 +215,19 @@
   padding: 15px 15px 20px 15px;
   background: rgba(16, 133, 84, 0.6);
   gap: 7px;
+  max-height: 300px;
+  overflow-y: overlay;
+  overflow-x: hidden;
+  padding-right: 5px;
+}
+.scenarios__items-list::-webkit-scrollbar {
+  background: none;
+  width: 5px;
+}
+.scenarios__items-list::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #1acd81;
+  outline: 0.8px solid #43e5a0;
 }
 
 .tasks__tasks-list {
@@ -489,6 +502,10 @@
   .tasks__add-task > input {
     width: 350px;
   }
+  .tasks__bottom {
+    max-height: none;
+    padding-right: 0;
+  }
 }
 @media screen and (width <= 1050px) {
   body {
@@ -529,6 +546,7 @@
   .scenarios__items-list {
     width: 75%;
     gap: 15px;
+    max-height: none;
   }
   .scenarios__add-warning {
     width: 75%;
@@ -570,7 +588,7 @@
   }
 }
 @media screen and (width <= 550px) {
-  .item-button__text, .scenarios__add-button > span, .tasks__add-task > input, .tasks__add-task > button, .task-left__text, .task-right__text, .tasks__completed-tasks-list > div > div > span {
+  .item-button__text, .scenarios__add-button > span, .tasks__add-task > input, .tasks__add-task > button, .task-left__text, .task-right__text, .tasks__completed-tasks-list > div > div > span, .items-list__item-button-created > div > div > span {
     font-size: 14px !important;
   }
   .tasks__add-task > input, .tasks__add-task > button {
@@ -580,7 +598,7 @@
     font-size: 12px;
   }
   .tasks__completed-tasks-list > div > div {
-    width: 300px;
+    width: 200px;
   }
   .todo__main-block {
     padding: 0 30px;
@@ -617,13 +635,13 @@
     width: 300px;
   }
   .task-left__body {
-    width: 80px;
+    width: 90px;
   }
   .tasks__completed-tasks-list > div {
     width: 270px;
   }
   .tasks__add-task > input {
-    width: 170px;
+    width: 190px;
   }
   .todo__scenarios {
     width: calc(100% - 40px);
@@ -645,7 +663,7 @@
   .todo__scenarios {
     width: calc(100% - 30px);
   }
-  .item-button__text, .scenarios__add-button > span, .tasks__add-task > input, .tasks__add-task > button, .task-left__text, .task-right__text, .tasks__completed-tasks-list > div > div > span {
+  .item-button__text, .scenarios__add-button > span, .tasks__add-task > input, .tasks__add-task > button, .task-left__text, .task-right__text, .tasks__completed-tasks-list > div > div > span, .items-list__item-button-created > div > div > span {
     font-size: 12px !important;
   }
   .tasks__add-task > input, .tasks__add-task > button {
@@ -675,12 +693,12 @@
     width: 210px;
   }
   .tasks__add-task > input {
-    width: 160px;
+    width: 190px;
   }
   .todo__scenarios {
     width: calc(100% - 30px);
   }
-  .item-button__text, .scenarios__add-button > span, .tasks__add-task > input, .tasks__add-task > button, .task-left__text, .task-right__text, .tasks__completed-tasks-list > div > div > span {
+  .item-button__text, .scenarios__add-button > span, .tasks__add-task > input, .tasks__add-task > button, .task-left__text, .task-right__text, .tasks__completed-tasks-list > div > div > span, .items-list__item-button-created > div > div > span {
     font-size: 10px !important;
   }
   .tasks__add-task > input, .tasks__add-task > button {
@@ -719,7 +737,7 @@
   .todo__scenarios {
     width: calc(100% - 50px);
   }
-  .item-button__text, .scenarios__add-button > span, .tasks__add-task > input, .tasks__add-task > button, .task-left__text, .task-right__text, .tasks__completed-tasks-list > div > div > span {
+  .item-button__text, .scenarios__add-button > span, .tasks__add-task > input, .tasks__add-task > button, .task-left__text, .task-right__text, .tasks__completed-tasks-list > div > div > span, .items-list__item-button-created > div > div > span {
     font-size: 8px !important;
   }
   .tasks__add-task > input, .tasks__add-task > button {
@@ -742,14 +760,30 @@
     gap: 35px;
   }
 }
+@media screen and (height <= 900px) {
+  .todo__main-block {
+    height: 600px;
+  }
+  #app .todo__title {
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+}
+@media screen and (height <= 700px) {
+  #app body {
+    align-items: flex-start !important;
+    height: -moz-fit-content !important;
+    height: fit-content !important;
+  }
+  .todo {
+    padding-top: 90px;
+    padding-bottom: 60px;
+  }
+}
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-}
-
-* {
-  outline: 3px solid green;
 }
 
 body {
@@ -762,6 +796,9 @@ body {
   padding: 0;
   background-image: url(../assets/background.svg);
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
   font-family: "Inter";
   font-weight: 400;
   font-size: 16px;
@@ -778,6 +815,9 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.todo > * {
+  box-shadow: 0, 4px, 4px, rgba(0, 0, 0, 0.25);
 }
 
 .todo__title {
