@@ -2,6 +2,7 @@
 @import '_main-block.scss';
 @import 'scenarios/_scenarios.scss';
 @import 'tasks/_tasks.scss';
+@import '_adaptations.scss';
 
 *,
 *::before,
@@ -41,10 +42,4 @@ button {
 	font-weight: 500;
 	font-size: 40px;
 	text-transform: uppercase;
-}
-@media screen and (width <= 1450px) {
-	.todo__title {
-		margin-bottom: 30px;
-		font-size: 32px;
-	}
 }

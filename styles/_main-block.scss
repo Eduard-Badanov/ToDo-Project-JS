@@ -17,29 +17,3 @@
 	gap: 100px;
 	margin-top: 45px;
 }
-@media screen and (width <= 1500px) {
-	.todo__main-block {
-		padding: 0 150px;
-	}	
-}
-@media screen and (width <= 1350px) {
-	.todo__main-block {
-		height: 600px;
-		padding: 0 100px;
-	}	
-}
-@media screen and (width <= 1150px) {
-	.todo__main-block {
-		height: 600px;
-		padding: 0 80px;
-	}	
-}
-@media screen and (width <= 1050px) {
-	.todo__content {
-		flex-direction: column;
-		align-items: center;
-	}
-	.todo__main-block {
-		height: max-content;
-	}
-}

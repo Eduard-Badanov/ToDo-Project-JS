@@ -20,33 +20,6 @@
   margin-top: 45px;
 }
 
-@media screen and (width <= 1500px) {
-  .todo__main-block {
-    padding: 0 150px;
-  }
-}
-@media screen and (width <= 1350px) {
-  .todo__main-block {
-    height: 600px;
-    padding: 0 100px;
-  }
-}
-@media screen and (width <= 1150px) {
-  .todo__main-block {
-    height: 600px;
-    padding: 0 80px;
-  }
-}
-@media screen and (width <= 1050px) {
-  .todo__content {
-    flex-direction: column;
-    align-items: center;
-  }
-  .todo__main-block {
-    height: -moz-max-content;
-    height: max-content;
-  }
-}
 .items-list__item-button,
 .items-list__item-button-created {
   display: flex;
@@ -134,6 +107,7 @@
 .items-list__item-button-created {
   display: flex;
   gap: 0;
+  justify-content: space-between;
 }
 .items-list__item-button-created > img {
   opacity: 0;
@@ -329,14 +303,6 @@
   font-size: 13px;
 }
 
-@media screen and (width <= 1150px) {
-  .tasks__tasks-list {
-    width: 480px;
-  }
-  .task-left__body {
-    width: 250px;
-  }
-}
 .tasks__completed-tasks-list {
   display: flex;
   align-items: flex-end;
@@ -403,14 +369,6 @@
   cursor: pointer;
 }
 
-@media screen and (width <= 1150px) {
-  .tasks__completed-tasks-list > div {
-    width: 450px;
-  }
-  .tasks__completed-tasks-list > div > div {
-    width: 350px;
-  }
-}
 .todo__tasks {
   display: flex;
   align-items: flex-start;
@@ -506,14 +464,282 @@
   cursor: pointer;
 }
 
+@media screen and (width <= 1500px) {
+  .todo__main-block {
+    padding: 0 150px;
+  }
+}
+@media screen and (width <= 1450px) {
+  .todo__title {
+    margin-bottom: 30px;
+    font-size: 32px;
+  }
+}
+@media screen and (width <= 1350px) {
+  .todo__main-block {
+    height: 600px;
+    padding: 0 100px;
+  }
+}
 @media screen and (width <= 1150px) {
+  .todo__main-block {
+    height: 600px;
+    padding: 0 80px;
+  }
   .tasks__add-task > input {
     width: 350px;
   }
 }
 @media screen and (width <= 1050px) {
+  body {
+    align-items: flex-start !important;
+    height: -moz-fit-content !important;
+    height: fit-content !important;
+  }
+  .todo {
+    padding-top: 70px;
+    padding-bottom: 60px;
+  }
+  .todo__content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .todo__main-block {
+    height: -moz-max-content;
+    height: max-content;
+  }
   .tasks__title {
     margin: 0 auto;
+  }
+  .tasks__tasks-list {
+    width: 480px;
+  }
+  .task-left__body {
+    width: 250px;
+  }
+  .tasks__completed-tasks-list > div {
+    width: 450px;
+  }
+  .tasks__completed-tasks-list > div > div {
+    width: 350px;
+  }
+  .todo__scenarios {
+    width: calc(100% - 150px);
+  }
+  .scenarios__items-list {
+    width: 75%;
+    gap: 15px;
+  }
+  .scenarios__add-warning {
+    width: 75%;
+  }
+  .items-list__item-button, .items-list__item-button-created {
+    width: 90%;
+  }
+  .todo__tasks {
+    padding-bottom: 30px;
+  }
+}
+@media screen and (width <= 710px) {
+  .tasks__tasks-list {
+    width: 400px;
+  }
+  .task-left__body {
+    width: 180px;
+  }
+  .tasks__completed-tasks-list > div {
+    width: 370px;
+  }
+  .tasks__add-task > input {
+    width: 270px;
+  }
+  .todo__scenarios {
+    width: calc(100% - 70px);
+  }
+  body .todo__title {
+    margin-bottom: 20px;
+    font-size: 26px;
+  }
+  .todo {
+    padding-bottom: 50px;
+  }
+}
+@media screen and (width <= 650px) {
+  .todo__main-block {
+    padding: 0 50px;
+  }
+}
+@media screen and (width <= 550px) {
+  .item-button__text, .scenarios__add-button > span, .tasks__add-task > input, .tasks__add-task > button, .task-left__text, .task-right__text, .tasks__completed-tasks-list > div > div > span {
+    font-size: 14px !important;
+  }
+  .tasks__add-task > input, .tasks__add-task > button {
+    height: 35px;
+  }
+  .tasks__sort-delete > button > span, .tasks__completed-tasks > button > span, .task-right__data {
+    font-size: 12px;
+  }
+  .tasks__completed-tasks-list > div > div {
+    width: 300px;
+  }
+  .todo__main-block {
+    padding: 0 30px;
+  }
+  .todo__content {
+    gap: 75px;
+  }
+}
+@media screen and (width <= 500px) {
+  .todo__main-block {
+    padding: 0 25px;
+  }
+  .tasks__tasks-list {
+    width: 350px;
+  }
+  .task-left__body {
+    width: 130px;
+  }
+  .tasks__completed-tasks-list > div {
+    width: 320px;
+  }
+  .tasks__add-task > input {
+    width: 220px;
+  }
+  .todo__scenarios {
+    width: calc(100% - 50px);
+  }
+  .todo {
+    padding-top: 50px;
+  }
+}
+@media screen and (width <= 450px) {
+  .tasks__tasks-list {
+    width: 300px;
+  }
+  .task-left__body {
+    width: 80px;
+  }
+  .tasks__completed-tasks-list > div {
+    width: 270px;
+  }
+  .tasks__add-task > input {
+    width: 170px;
+  }
+  .todo__scenarios {
+    width: calc(100% - 40px);
+  }
+}
+@media screen and (width <= 420px) {
+  .tasks__tasks-list {
+    width: 270px;
+  }
+  .task-left__body {
+    width: 75px;
+  }
+  .tasks__completed-tasks-list > div {
+    width: 240px;
+  }
+  .tasks__add-task > input {
+    width: 190px;
+  }
+  .todo__scenarios {
+    width: calc(100% - 30px);
+  }
+  .item-button__text, .scenarios__add-button > span, .tasks__add-task > input, .tasks__add-task > button, .task-left__text, .task-right__text, .tasks__completed-tasks-list > div > div > span {
+    font-size: 12px !important;
+  }
+  .tasks__add-task > input, .tasks__add-task > button {
+    height: 30px;
+  }
+  .tasks__sort-delete > button > span, .tasks__completed-tasks > button > span, .task-right__data {
+    font-size: 10px;
+  }
+  .todo__main-block {
+    padding: 0 15px;
+  }
+  .tasks__completed-tasks-list > div > div {
+    width: 180px;
+  }
+  .todo__content {
+    margin-top: 30px;
+  }
+}
+@media screen and (width <= 385px) {
+  .tasks__tasks-list {
+    width: 240px;
+  }
+  .task-left__body {
+    width: 60px;
+  }
+  .tasks__completed-tasks-list > div {
+    width: 210px;
+  }
+  .tasks__add-task > input {
+    width: 160px;
+  }
+  .todo__scenarios {
+    width: calc(100% - 30px);
+  }
+  .item-button__text, .scenarios__add-button > span, .tasks__add-task > input, .tasks__add-task > button, .task-left__text, .task-right__text, .tasks__completed-tasks-list > div > div > span {
+    font-size: 10px !important;
+  }
+  .tasks__add-task > input, .tasks__add-task > button {
+    height: 25px;
+  }
+  .tasks__sort-delete > button > span, .tasks__completed-tasks > button > span, .task-right__data {
+    font-size: 8px;
+  }
+  .todo__main-block {
+    padding: 0 10px;
+  }
+  .tasks__completed-tasks-list > div > div {
+    width: 150px;
+  }
+  .todo {
+    padding-top: 35px;
+    padding-bottom: 45px;
+  }
+  .todo__content {
+    gap: 40px;
+  }
+}
+@media screen and (width <= 370px) {
+  .tasks__tasks-list {
+    width: 220px;
+  }
+  .task-left__body {
+    width: 45px;
+  }
+  .tasks__completed-tasks-list > div {
+    width: 190px;
+  }
+  .tasks__add-task > input {
+    width: 190px;
+  }
+  .todo__scenarios {
+    width: calc(100% - 50px);
+  }
+  .item-button__text, .scenarios__add-button > span, .tasks__add-task > input, .tasks__add-task > button, .task-left__text, .task-right__text, .tasks__completed-tasks-list > div > div > span {
+    font-size: 8px !important;
+  }
+  .tasks__add-task > input, .tasks__add-task > button {
+    height: 20px;
+  }
+  .tasks__sort-delete > button > span, .tasks__completed-tasks > button > span, .task-right__data {
+    font-size: 7px;
+  }
+  .todo__main-block {
+    padding: 0 8px;
+  }
+  .tasks__completed-tasks-list > div > div {
+    width: 130px;
+  }
+  .todo {
+    padding-top: 30px;
+    padding-bottom: 35px;
+  }
+  .todo__content {
+    gap: 35px;
   }
 }
 *,
@@ -559,11 +785,4 @@ button {
   font-weight: 500;
   font-size: 40px;
   text-transform: uppercase;
-}
-
-@media screen and (width <= 1450px) {
-  .todo__title {
-    margin-bottom: 30px;
-    font-size: 32px;
-  }
 }/*# sourceMappingURL=main.css.map */
