@@ -22,7 +22,7 @@
 		width: 100%;
 		height: 40px;
 		&.animated > div > div > span {
-			animation-duration: 12.5s;
+			animation-duration: 10s;
 			animation-name: slide;
 			animation-timing-function: linear;
 			animation-iteration-count: infinite;
@@ -31,18 +31,24 @@
 			0% {
 				transform: translateX(0);
 			}
-			53% {
-				transform: translateX(-125%);
+			50% {
+				transform: translateX(-120%);
 				opacity: 1;
+				visibility: visible;
 			}
-			54% {
+			50.1% {
 				opacity: 0;
+				visibility: hidden;
 			}
-			61% {
-				transform: translateX(110%);
+			50.1001% {
+				visibility: hidden;			
 				opacity: 0;
+				transform: translateX(100%);
+				opacity: 0;
+				visibility: hidden;
 			}
-			65% {
+			50.2% {
+				visibility: visible;
 				opacity: 1;
 			}
 			100% {

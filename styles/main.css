@@ -44,32 +44,10 @@
 .items-list__item-button.animated > div > span, .items-list__item-button.animated > div > div > span,
 .items-list__item-button-created.animated > div > span,
 .items-list__item-button-created.animated > div > div > span {
-  animation-duration: 10s;
+  animation-duration: 8s;
   animation-name: slide;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-}
-@keyframes slide {
-  0% {
-    transform: translateX(0);
-  }
-  53% {
-    transform: translateX(-125%);
-    opacity: 1;
-  }
-  54% {
-    opacity: 0;
-  }
-  61% {
-    transform: translateX(110%);
-    opacity: 0;
-  }
-  65% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(0);
-  }
 }
 .items-list__item-button > img,
 .items-list__item-button-created > img {
@@ -250,7 +228,7 @@
   height: 40px;
 }
 .tasks-list__task.animated > div > div > span {
-  animation-duration: 12.5s;
+  animation-duration: 10s;
   animation-name: slide;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
@@ -259,18 +237,24 @@
   0% {
     transform: translateX(0);
   }
-  53% {
-    transform: translateX(-125%);
+  50% {
+    transform: translateX(-120%);
     opacity: 1;
+    visibility: visible;
   }
-  54% {
+  50.1% {
     opacity: 0;
+    visibility: hidden;
   }
-  61% {
-    transform: translateX(110%);
+  50.1001% {
+    visibility: hidden;
     opacity: 0;
+    transform: translateX(100%);
+    opacity: 0;
+    visibility: hidden;
   }
-  65% {
+  50.2% {
+    visibility: visible;
     opacity: 1;
   }
   100% {
@@ -335,32 +319,10 @@
   height: 40px;
 }
 .tasks__completed-tasks-list > div.animated > div > span {
-  animation-duration: 12.5s;
+  animation-duration: 10s;
   animation-name: slide;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-}
-@keyframes slide {
-  0% {
-    transform: translateX(0);
-  }
-  53% {
-    transform: translateX(-125%);
-    opacity: 1;
-  }
-  54% {
-    opacity: 0;
-  }
-  61% {
-    transform: translateX(110%);
-    opacity: 0;
-  }
-  65% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(0);
-  }
 }
 .tasks__completed-tasks-list > div > div {
   display: flex;
