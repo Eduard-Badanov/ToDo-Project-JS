@@ -218,7 +218,6 @@
   max-height: 300px;
   overflow-y: overlay;
   overflow-x: hidden;
-  padding-right: 5px;
 }
 .scenarios__items-list::-webkit-scrollbar {
   background: none;
@@ -514,7 +513,6 @@
     height: fit-content !important;
   }
   .todo {
-    padding-top: 70px;
     padding-bottom: 60px;
   }
   .todo__content {
@@ -626,9 +624,6 @@
   .todo__scenarios {
     width: calc(100% - 50px);
   }
-  .todo {
-    padding-top: 50px;
-  }
 }
 @media screen and (width <= 450px) {
   .tasks__tasks-list {
@@ -714,7 +709,6 @@
     width: 150px;
   }
   .todo {
-    padding-top: 35px;
     padding-bottom: 45px;
   }
   .todo__content {
@@ -753,7 +747,6 @@
     width: 130px;
   }
   .todo {
-    padding-top: 30px;
     padding-bottom: 35px;
   }
   .todo__content {
@@ -762,22 +755,22 @@
 }
 @media screen and (height <= 900px) {
   .todo__main-block {
-    height: 600px;
+    padding-bottom: 15px;
   }
   #app .todo__title {
     font-size: 32px;
     margin-bottom: 30px;
   }
-}
-@media screen and (height <= 700px) {
-  #app body {
+  .todo {
+    position: relative;
+    padding-bottom: 60px;
+    top: 50px;
+  }
+  body {
     align-items: flex-start !important;
     height: -moz-fit-content !important;
     height: fit-content !important;
-  }
-  .todo {
-    padding-top: 90px;
-    padding-bottom: 60px;
+    flex-direction: row !important;
   }
 }
 *,
@@ -804,6 +797,15 @@ body {
   font-size: 16px;
   color: #fff;
 }
+body::-webkit-scrollbar {
+  background: #272727;
+  width: 5px;
+}
+body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #1acd81;
+  outline: 0.8px solid #43e5a0;
+}
 
 button {
   border: 0;
@@ -815,9 +817,6 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-.todo > * {
-  box-shadow: 0, 4px, 4px, rgba(0, 0, 0, 0.25);
 }
 
 .todo__title {
