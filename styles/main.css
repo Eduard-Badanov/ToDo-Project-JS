@@ -154,7 +154,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding-top: 6.4px;
+  padding-top: 10px;
 }
 .scenarios__add-input > div > button {
   font-size: 16px;

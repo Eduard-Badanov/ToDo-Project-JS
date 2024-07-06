@@ -1,4 +1,6 @@
-export function createScenarioItem(icon = scenarioIcons.info, text, DOMname, isCreated = false) {
+import { scenarioIcons } from '../pathsToIcons.js'
+
+export function createScenarioItem(text, DOMname, icon = scenarioIcons.info, isCreated = false) {
 	const itemButton = document.createElement('button')
 	if (!isCreated) {
 		itemButton.classList.add('items-list__item-button', `${DOMname}`)

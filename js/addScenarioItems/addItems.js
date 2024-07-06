@@ -3,7 +3,7 @@ import { createScenarioItem } from './createScenarioItem.js'
 
 export function addItems() {
 	user.forEach((element) => {
-		createScenarioItem(element.icon, element.text, element.DOMname, element.isCreated)
+		createScenarioItem(element.text, element.DOMname, element.icon, element.isCreated)
 	})
 	
 	for (let i = 1; i <= user.length; i++) {
