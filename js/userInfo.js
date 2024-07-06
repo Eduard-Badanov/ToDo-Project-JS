@@ -109,11 +109,15 @@ export let user = [
 
 user = new Proxy(user, {
     set: (target, prop, value) => {
-        target[prop] = value
+        if (prop !== 'length') {
+            target[prop] = value
+            console.log('установка свойства', value);
+        }
         return true
     },
-    defineProperty: (target, prop, descriptor) => {
-        target[prop] = descriptor.value
+    deleteProperty: (target, prop) => {
+        console.log('удаление свойства', target[prop]);
+        delete target[prop]
         return true
     }
 })
