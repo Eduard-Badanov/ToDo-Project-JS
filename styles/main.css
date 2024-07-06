@@ -786,4 +786,9 @@ button {
   font-weight: 500;
   font-size: 40px;
   text-transform: uppercase;
+}
+
+.hidden {
+  display: none;
+  transition: display 0.15s ease-in-out;
 }/*# sourceMappingURL=main.css.map */
