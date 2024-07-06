@@ -3,8 +3,9 @@ import { createTaskItem } from './createTaskItem.js'
 
 export function addTaskItem() {
 	user.forEach((element) => {
+		let DOMname = element.DOMname
 		element.tasks.forEach((element) => {
-			createTaskItem(element.text, element.data, element.isImportant)
+			createTaskItem(DOMname, element.id, element.text, element.data, element.isImportant)
 		})
 	});
 	const result = user.reduce((acc, el) => {

@@ -1,8 +1,8 @@
 import { taskIcons } from '../pathsToIcons.js'
 
-export function createTaskItem(text, data, isImportant = false) {
+export function createTaskItem(DOMname, id, text, data, isImportant = false) {
 	const taskItem = document.createElement('div')
-	taskItem.classList.add('tasks-list__task')
+	taskItem.classList.add('tasks-list__task', `${DOMname}-${id}`)
 	taskItem.innerHTML = `
 	<div class="task-left">
 		<button class="task-left__button-circle">
