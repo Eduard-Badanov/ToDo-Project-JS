@@ -1,6 +1,6 @@
 import { scenarioIcons } from './pathsToIcons.js'
 
-export const user = [
+export let user = [
     {
         icon: scenarioIcons.user,
         text: 'Все задачи',
@@ -90,5 +90,30 @@ export const user = [
                 isImportant: false
             }
 		]
+    },
+    {
+        icon: scenarioIcons.info,
+        text: 'На субботу',
+        DOMname: 'item-created-2',
+        isCreated: true,
+        tasks: [
+            {
+                id: 0,
+                text: 'Проверка',
+                data: '22:30 28.06.2024',
+                isImportant: true
+            }
+        ]
     }
 ]
+
+user = new Proxy(user, {
+    set: (target, prop, value) => {
+        target[prop] = value
+        return true
+    },
+    defineProperty: (target, prop, descriptor) => {
+        target[prop] = descriptor.value
+        return true
+    }
+})

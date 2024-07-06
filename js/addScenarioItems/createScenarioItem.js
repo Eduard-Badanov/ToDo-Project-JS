@@ -15,7 +15,7 @@ export function createScenarioItem(text, DOMname, icon = scenarioIcons.info, isC
 			<img class="item-button-created__image" src="${icon}">
 			<div class="item-button__body"><span class="item-button-created__text">${text}</span></div>
 		</div>
-		<img class="item-button-created__image" src="./assets/icons/scenario-icons/delete.svg">`
+		<img class="item-button-created__image-delete" src="${scenarioIcons.delete}">`
 		document.querySelector('.scenarios__items-list').appendChild(itemButton)
 	}
 }

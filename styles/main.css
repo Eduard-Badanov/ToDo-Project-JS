@@ -210,7 +210,7 @@
 .tasks__tasks-list {
   display: flex;
   align-items: center;
-  flex-direction: column;
+  flex-direction: column-reverse;
   gap: 15px;
   width: 530px;
 }
