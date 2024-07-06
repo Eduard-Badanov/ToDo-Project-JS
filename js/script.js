@@ -9,4 +9,6 @@
 // }
 
 import { addItems } from './addScenarioItems/addItems.js'
+import { addTaskItem } from './addTaskItems/addTaskItem.js'
 addItems()
+addTaskItem()

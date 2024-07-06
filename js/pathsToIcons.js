@@ -12,4 +12,5 @@ export const taskIcons = {
 	circle: './assets/icons/task-icons/circle.svg',
 	delete: './assets/icons/task-icons/delete.svg',
 	star: './assets/icons/task-icons/star.svg',
+	starActive: './assets/icons/task-icons/star-active.svg'
 }

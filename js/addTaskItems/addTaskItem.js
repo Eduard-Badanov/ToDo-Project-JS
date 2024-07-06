@@ -1,0 +1,18 @@
+import { user } from '../userInfo.js'
+import { createTaskItem } from './createTaskItem.js'
+
+export function addTaskItem() {
+	user.forEach((element) => {
+		element.tasks.forEach((element) => {
+			createTaskItem(element.text, element.data, element.isImportant)
+		})
+	});
+	const result = user.reduce((acc, el) => {
+		return acc += el.tasks.length
+	}, 0)
+	for (let i = 1; i <= result; i++) {
+		if (document.querySelector(`.tasks__tasks-list > div:nth-child(${i}) > div > div > span`).clientWidth >= document.querySelector(`.tasks__tasks-list > div:nth-child(${i}) > div > div`).clientWidth) {
+			document.querySelector(`.tasks__tasks-list > div:nth-child(${i})`).classList.add('animated')
+		}
+	}
+}
