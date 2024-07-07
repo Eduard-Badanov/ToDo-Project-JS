@@ -5,6 +5,7 @@ import('./listeners/scenariosAdd.js')
 import('./listeners/scenarioItems.js')
 import('./listeners/sortingElements.js')
 import('./listeners/showCompletedTasks.js')
+import('./listeners/taskItems.js')
 
 addItems()
 addTaskItem()

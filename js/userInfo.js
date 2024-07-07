@@ -9,13 +9,13 @@ export let user = [
         isCreated: false,
         tasks: [
             {
-				id: 0,
+				id: 1,
                 text: 'Сделать техническое задание',
                 data: '22:30 28.06.2024',
                 isImportant: false
             },
             {
-				id: 1,
+				id: 0,
                 text: 'Сделать техническое задание',
                 data: '22:30 28.06.2024',
                 isImportant: false
@@ -28,12 +28,12 @@ export let user = [
         DOMname: 'item-free-time',
         isCreated: false,
         tasks: [
-            {
-				id: 0,
-                text: 'Сделать техническое задание',
-                data: '22:30 28.06.2024',
-                isImportant: false
-            }
+            // {
+			// 	id: 0,
+            //     text: 'Сделать техническое задание',
+            //     data: '22:30 28.06.2024',
+            //     isImportant: false
+            // }
 		]
     },
     {
@@ -42,12 +42,12 @@ export let user = [
         DOMname: 'item-work',
         isCreated: false,
         tasks: [
-            {
-				id: 0,
-                text: 'Сделать техническое задание',
-                data: '22:30 28.06.2024',
-                isImportant: false
-            }
+            // {
+			// 	id: 0,
+            //     text: 'Сделать техническое задание',
+            //     data: '22:30 28.06.2024',
+            //     isImportant: false
+            // }
 		]
     },
     {
@@ -56,12 +56,12 @@ export let user = [
         DOMname: 'item-home',
         isCreated: false,
         tasks: [
-            {
-				id: 0,
-                text: 'Сделать техническое задание',
-                data: '22:30 28.06.2024',
-                isImportant: false
-            }
+            // {
+			// 	id: 0,
+            //     text: 'Сделать техническое задание',
+            //     data: '22:30 28.06.2024',
+            //     isImportant: false
+            // }
 		]
     },
     {
@@ -70,12 +70,12 @@ export let user = [
         DOMname: 'item-favorites',
         isCreated: false,
         tasks: [
-            {
-				id: 0,
-                text: 'Сделать техническое задание',
-                data: '22:30 28.06.2024',
-                isImportant: true
-            }
+            // {
+			// 	id: 0,
+            //     text: 'Сделать техническое задание',
+            //     data: '22:30 28.06.2024',
+            //     isImportant: true
+            // }
 		]
     },
     {
@@ -84,12 +84,12 @@ export let user = [
         DOMname: 'item-created-1',
         isCreated: true,
         tasks: [
-            {
-				id: 0,
-                text: 'Сделать техническое задание',
-                data: '22:30 28.06.2024',
-                isImportant: false
-            }
+            // {
+			// 	id: 0,
+            //     text: 'Сделать техническое задание',
+            //     data: '22:30 28.06.2024',
+            //     isImportant: false
+            // }
 		]
     },
     {
@@ -98,12 +98,12 @@ export let user = [
         DOMname: 'item-created-2',
         isCreated: true,
         tasks: [
-            {
-                id: 0,
-                text: 'Проверка',
-                data: '22:30 28.06.2024',
-                isImportant: true
-            }
+            // {
+            //     id: 0,
+            //     text: 'Проверка',
+            //     data: '22:30 28.06.2024',
+            //     isImportant: true
+            // }
         ]
     }
 ]
@@ -124,7 +124,7 @@ user = new Proxy(user, {
 })
 
 export let userParameters = {
-    sorting: true
+    sorting: false
 }
 
 userParameters = new Proxy(userParameters, {
