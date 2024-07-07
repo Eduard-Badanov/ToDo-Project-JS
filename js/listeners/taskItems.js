@@ -63,7 +63,7 @@ document.querySelector('.tasks__tasks-list').addEventListener('click', (event) =
 		setTimeout(() => document.querySelector(`.${DOMname}-${id} > div > button > img`).attributes.src.nodeValue = taskIcons.circle, 300)
 		setTimeout(() => document.querySelector(`.${DOMname}-${id} > div > div > span`).style.textDecoration = 'none', 300)
 		setTimeout(() => {
-			user.forEach((element, index) => {
+			user.forEach((element) => {
 				if (element.DOMname === DOMname) {
 					addCompletedTaskItem(DOMname, id, text)
 	
