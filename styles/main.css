@@ -791,4 +791,14 @@ button {
 .hidden {
   display: none;
   transition: display 0.15s ease-in-out;
+}
+
+.rotated {
+  transform: rotate(180deg);
+  transition: transform 0.15s ease-in-out;
+}
+
+.reversed {
+  flex-direction: column;
+  transition: flex-direction 0.15s ease-in-out;
 }/*# sourceMappingURL=main.css.map */

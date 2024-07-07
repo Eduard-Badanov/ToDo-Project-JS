@@ -1,3 +1,4 @@
+import { isReversed } from './listeners/sortingElements.js'
 import { scenarioIcons } from './pathsToIcons.js'
 
 export let user = [
@@ -118,6 +119,21 @@ user = new Proxy(user, {
     deleteProperty: (target, prop) => {
         console.log('удаление свойства', target[prop]);
         delete target[prop]
+        return true
+    }
+})
+
+export let userParameters = {
+    sorting: true
+}
+
+userParameters = new Proxy(userParameters, {
+    set: (target, prop, value) => {
+        if (prop !== 'length') {
+            target[prop] = value
+            console.log('установка свойства', value);
+            isReversed()
+        }
         return true
     }
 })
