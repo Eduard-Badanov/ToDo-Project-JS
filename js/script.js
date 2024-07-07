@@ -4,6 +4,7 @@ import { addTaskItem } from './addTaskItems/addTaskItem.js'
 import('./listeners/scenariosAdd.js')
 import('./listeners/scenarioItems.js')
 import('./listeners/sortingElements.js')
+import('./listeners/showCompletedTasks.js')
 
 addItems()
 addTaskItem()
