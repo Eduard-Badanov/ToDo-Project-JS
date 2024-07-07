@@ -1,5 +1,6 @@
 import { addCompletedTaskItem } from '../addCompletedTaskItems/addCompletedTaskItem.js'
 import { createTaskItem } from '../addTaskItems/createTaskItem.js'
+import { taskIcons } from '../pathsToIcons.js'
 import { user } from '../userInfo.js'
 
 document.querySelector('.add-task__button').addEventListener('click', () => {
@@ -33,7 +34,6 @@ document.querySelector('.tasks__add-task > input').addEventListener('keydown', (
 		document.querySelector('.add-task__button').click()
 	}
 })
-
 document.querySelector('.tasks__tasks-list').addEventListener('click', (event) => {
 	if (event.target.classList.contains('button-delete__image') || event.target.classList.contains('task-right__button-delete')) {
 		const DOMname = event.target.closest('.tasks-list__task').classList[1].slice(0, -2)
@@ -41,12 +41,6 @@ document.querySelector('.tasks__tasks-list').addEventListener('click', (event) =
 		const text = document.querySelector(`.${DOMname}-${id} > div > div > span`).innerHTML
 		user.forEach((element, index) => {
 			if (element.DOMname === DOMname) {
-				addCompletedTaskItem(DOMname, id, text)
-
-				if (document.querySelector(`.completed-tasks-list__task.${DOMname}-${id} > div > span`).clientWidth >= document.querySelector(`.completed-tasks-list__task.${DOMname}-${id} > div`).clientWidth) {
-					document.querySelector(`.completed-tasks-list__task.${DOMname}-${id}`).classList.add('animated')
-				}
-
 				let indexOfTask = null
 				element.tasks.forEach((el) => {
 					if (el.id === id) {
@@ -57,6 +51,37 @@ document.querySelector('.tasks__tasks-list').addEventListener('click', (event) =
 				event.target.closest('.tasks-list__task').remove()
 			}
 		})
+	}
+})
+document.querySelector('.tasks__tasks-list').addEventListener('click', (event) => {
+	if (event.target.classList.contains('button-circle__image') || event.target.classList.contains('task-left__button-circle')) {
+		const DOMname = event.target.closest('.tasks-list__task').classList[1].slice(0, -2)
+		const id = Number(event.target.closest('.tasks-list__task').classList[1].at(-1))
+		const text = document.querySelector(`.${DOMname}-${id} > div > div > span`).innerHTML
+		document.querySelector(`.${DOMname}-${id} > div > button > img`).attributes.src.nodeValue = taskIcons.circleActive
+		document.querySelector(`.${DOMname}-${id} > div > div > span`).style.textDecoration = 'line-through'
+		setTimeout(() => document.querySelector(`.${DOMname}-${id} > div > button > img`).attributes.src.nodeValue = taskIcons.circle, 300)
+		setTimeout(() => document.querySelector(`.${DOMname}-${id} > div > div > span`).style.textDecoration = 'none', 300)
+		setTimeout(() => {
+			user.forEach((element, index) => {
+				if (element.DOMname === DOMname) {
+					addCompletedTaskItem(DOMname, id, text)
+	
+					if (document.querySelector(`.completed-tasks-list__task.${DOMname}-${id} > div > span`).clientWidth >= document.querySelector(`.completed-tasks-list__task.${DOMname}-${id} > div`).clientWidth) {
+						document.querySelector(`.completed-tasks-list__task.${DOMname}-${id}`).classList.add('animated')
+					}
+	
+					let indexOfTask = null
+					element.tasks.forEach((el) => {
+						if (el.id === id) {
+							indexOfTask = element.tasks.indexOf(el)
+						}
+					})
+					delete element.tasks[indexOfTask]
+					event.target.closest('.tasks-list__task').remove()
+				}
+			})	
+		}, 500)
 	}
 })
 

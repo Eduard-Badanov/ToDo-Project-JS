@@ -10,6 +10,7 @@ export const scenarioIcons = {
 }
 export const taskIcons = {
 	circle: './assets/icons/task-icons/circle.svg',
+	circleActive: './assets/icons/task-icons/circle-active.svg',
 	delete: './assets/icons/task-icons/delete.svg',
 	star: './assets/icons/task-icons/star.svg',
 	starActive: './assets/icons/task-icons/star-active.svg'
