@@ -42,6 +42,11 @@ document.querySelector('.tasks__tasks-list').addEventListener('click', (event) =
 		user.forEach((element, index) => {
 			if (element.DOMname === DOMname) {
 				addCompletedTaskItem(DOMname, id, text)
+
+				if (document.querySelector(`.completed-tasks-list__task.${DOMname}-${id} > div > span`).clientWidth >= document.querySelector(`.completed-tasks-list__task.${DOMname}-${id} > div`).clientWidth) {
+					document.querySelector(`.completed-tasks-list__task.${DOMname}-${id}`).classList.add('animated')
+				}
+
 				let indexOfTask = null
 				element.tasks.forEach((el) => {
 					if (el.id === id) {
