@@ -10,3 +10,7 @@ document.querySelector('.scenarios__items-list').addEventListener('click', (even
 		}
 	}
 })
+
+window.addEventListener('load', () => {
+	document.querySelector('.item-all').classList.add('item-active')
+})
