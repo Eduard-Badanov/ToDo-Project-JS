@@ -1,7 +1,7 @@
 .tasks__completed-tasks-list {
 	display: flex;
 	align-items: flex-end;
-	flex-direction: column;
+	flex-direction: column-reverse;
 	gap: 15px;
 	width: 100%;
 	& > div {

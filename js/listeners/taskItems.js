@@ -1,6 +1,6 @@
+import { addCompletedTaskItem } from '../addCompletedTaskItems/addCompletedTaskItem.js'
 import { createTaskItem } from '../addTaskItems/createTaskItem.js'
 import { user } from '../userInfo.js'
-
 
 document.querySelector('.add-task__button').addEventListener('click', () => {
 	if (document.querySelector('.tasks__add-task > input').value.trim() !== '') {
@@ -20,6 +20,7 @@ document.querySelector('.add-task__button').addEventListener('click', () => {
 			}
 		})
 		createTaskItem(DOMname, id, text, data)
+		console.log(user);
 
 		if (document.querySelector(`.${DOMname}-${id} > div > div > span`).clientWidth >= document.querySelector(`.${DOMname}-${id} > div > div`).clientWidth) {
 			document.querySelector(`.${DOMname}-${id}`).classList.add('animated')
@@ -32,6 +33,31 @@ document.querySelector('.tasks__add-task > input').addEventListener('keydown', (
 		document.querySelector('.add-task__button').click()
 	}
 })
+
+document.querySelector('.tasks__tasks-list').addEventListener('click', (event) => {
+	if (event.target.classList.contains('button-delete__image') || event.target.classList.contains('task-right__button-delete')) {
+		const DOMname = event.target.closest('.tasks-list__task').classList[1].slice(0, -2)
+		const id = Number(event.target.closest('.tasks-list__task').classList[1].at(-1))
+		const text = document.querySelector(`.${DOMname}-${id} > div > div > span`).innerHTML
+		user.forEach((element, index) => {
+			if (element.DOMname === DOMname) {
+				addCompletedTaskItem(DOMname, id, text)
+				let indexOfTask = null
+				element.tasks.forEach((el) => {
+					if (el.id === id) {
+						indexOfTask = element.tasks.indexOf(el)
+					}
+				})
+				delete element.tasks[indexOfTask]
+				event.target.closest('.tasks-list__task').remove()
+			}
+		})
+	}
+})
+
+
+
+
 
 function getData() {
 	let globalTime = new Date()
