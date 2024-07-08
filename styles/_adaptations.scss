@@ -196,6 +196,12 @@
 	.todo__content {
 		margin-top: 30px;
 	}
+	.todo__warning {
+		width: -webkit-fill-available !important;
+		& > div > span {
+			width: 70%;
+		}
+	}
 }
 @media screen and (width <= 385px) {
 	.tasks__tasks-list {

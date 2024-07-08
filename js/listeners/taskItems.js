@@ -1,5 +1,6 @@
 import { addCompletedTaskItem } from '../addCompletedTaskItems/addCompletedTaskItem.js'
 import { createTaskItem } from '../addTaskItems/createTaskItem.js'
+import { createWarningMessage } from '../addWarningMessage/createWarningMessage.js'
 import { taskIcons } from '../pathsToIcons.js'
 import { user } from '../userInfo.js'
 
@@ -36,21 +37,26 @@ document.querySelector('.tasks__add-task > input').addEventListener('keydown', (
 })
 document.querySelector('.tasks__tasks-list').addEventListener('click', (event) => {
 	if (event.target.classList.contains('button-delete__image') || event.target.classList.contains('task-right__button-delete')) {
-		const DOMname = event.target.closest('.tasks-list__task').classList[1].slice(0, -2)
-		const id = Number(event.target.closest('.tasks-list__task').classList[1].at(-1))
-		const text = document.querySelector(`.${DOMname}-${id} > div > div > span`).innerHTML
-		user.forEach((element, index) => {
-			if (element.DOMname === DOMname) {
-				let indexOfTask = null
-				element.tasks.forEach((el) => {
-					if (el.id === id) {
-						indexOfTask = element.tasks.indexOf(el)
-					}
-				})
-				delete element.tasks[indexOfTask]
-				event.target.closest('.tasks-list__task').remove()
-			}
-		})
+		const result = createWarningMessage('type1')
+		console.log(result);
+		if (result) {
+			console.log('test');
+			const DOMname = event.target.closest('.tasks-list__task').classList[1].slice(0, -2)
+			const id = Number(event.target.closest('.tasks-list__task').classList[1].at(-1))
+			const text = document.querySelector(`.${DOMname}-${id} > div > div > span`).innerHTML
+			user.forEach((element, index) => {
+				if (element.DOMname === DOMname) {
+					let indexOfTask = null
+					element.tasks.forEach((el) => {
+						if (el.id === id) {
+							indexOfTask = element.tasks.indexOf(el)
+						}
+					})
+					delete element.tasks[indexOfTask]
+					event.target.closest('.tasks-list__task').remove()
+				}
+			})
+		}
 	}
 })
 document.querySelector('.tasks__tasks-list').addEventListener('click', (event) => {
