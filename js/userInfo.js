@@ -12,10 +12,10 @@ export let user = [
 				id: 1,
                 text: 'Сделать техническое задание',
                 data: '22:30 28.06.2024',
-                isImportant: false
+                isImportant: true
             },
             {
-				id: 0,
+				id: 2,
                 text: 'Сделать техническое задание',
                 data: '22:30 28.06.2024',
                 isImportant: false

@@ -84,7 +84,39 @@ document.querySelector('.tasks__tasks-list').addEventListener('click', (event) =
 		}, 500)
 	}
 })
-
+document.querySelector('.tasks__tasks-list').addEventListener('click', (event) => {
+	if (event.target.classList.contains('button-important__image') || event.target.classList.contains('task-right__button-important')) {
+		const DOMname = event.target.closest('.tasks-list__task').classList[1].slice(0, -2)
+		const id = Number(event.target.closest('.tasks-list__task').classList[1].at(-1))
+		if (document.querySelector(`.${DOMname}-${id} > div:nth-child(2) > button > img`).attributes.src.nodeValue === taskIcons.star) {
+			document.querySelector(`.${DOMname}-${id} > div:nth-child(2) > button > img`).attributes.src.nodeValue = taskIcons.starActive
+			user.forEach((element) => {
+				if (element.DOMname === DOMname) {
+					console.log(element);
+					element.tasks.forEach((el) => {
+						if (el.id === id) {
+							el.isImportant = true
+							console.log('установка важности');
+						}
+					})
+				}
+			})
+		} else {
+			document.querySelector(`.${DOMname}-${id} > div:nth-child(2) > button > img`).attributes.src.nodeValue = taskIcons.star
+			user.forEach((element) => {
+				if (element.DOMname === DOMname) {
+					console.log(element);
+					element.tasks.forEach((el) => {
+						if (el.id === id) {
+							el.isImportant = false
+							console.log('удаление важности');
+						}
+					})
+				}
+			})
+		}
+	}
+})
 
 
 
