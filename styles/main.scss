@@ -3,16 +3,15 @@
 @import 'scenarios/_scenarios.scss';
 @import 'tasks/_tasks.scss';
 @import '_adaptations.scss';
-@import '_warning.scss';
 
 *,
 *::before,
 *::after {
 	box-sizing: border-box;
 }
-// * {
-// 	// outline: 3px solid green
-// }
+* {
+	// outline: 3px solid green
+}
 body {
 	display: flex;
 	justify-content: center;

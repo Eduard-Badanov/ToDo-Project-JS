@@ -66,9 +66,6 @@
 		gap: 15px;
 		max-height: none;
 	}
-	.scenarios__add-warning {
-		width: 75%;
-	}
 	.items-list__item-button, .items-list__item-button-created {
 		width: 90%;
 	}
@@ -195,12 +192,6 @@
     }
 	.todo__content {
 		margin-top: 30px;
-	}
-	.todo__warning {
-		width: -webkit-fill-available !important;
-		& > div > span {
-			width: 70%;
-		}
 	}
 }
 @media screen and (width <= 385px) {
