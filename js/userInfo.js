@@ -28,12 +28,13 @@ export let user = [
         DOMname: 'item-free-time',
         isCreated: false,
         tasks: [
-            // {
-			// 	id: 0,
-            //     text: 'Сделать техническое задание',
-            //     data: '22:30 28.06.2024',
-            //     isImportant: false
-            // }
+            {
+				id: 1,
+                text: 'Сделать техническое задание',
+                data: '22:30 28.06.2024',
+                isImportant: false
+            },
+            
 		]
     },
     {

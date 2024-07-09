@@ -1,16 +1,21 @@
+import { removeRenderedTasksOfActiveScenarioItem } from '../addTaskItems/removeRenderedTasksOfActiveScenarioItem.js'
+import { renderTasksOfActiveScenarioItem } from '../addTaskItems/renderTasksOfActiveScenarioItem.js'
+
 document.querySelector('.scenarios__items-list').addEventListener('click', (event) => {
 	if (event.target.closest('button') !== null) {
 		if (document.querySelector('.scenarios__items-list').childNodes.forEach((element) => {
 			if (element.classList.contains('item-active')) {
+				// console.log(element.classList[1]);
 				element.classList.remove('item-active')
+				removeRenderedTasksOfActiveScenarioItem(element.classList[1])
 			}
-		})) event.target.closest('button').classList.add('item-active')
+		})) {
+			event.target.closest('button').classList.add('item-active')
+			renderTasksOfActiveScenarioItem(event.target.closest('button').classList[1])
+		}
 		else {
 			(event.target.closest('button')).classList.add('item-active')
+			renderTasksOfActiveScenarioItem(event.target.closest('button').classList[1])
 		}
 	}
-})
-
-window.addEventListener('load', () => {
-	document.querySelector('.item-all').classList.add('item-active')
 })

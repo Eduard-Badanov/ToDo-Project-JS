@@ -9,6 +9,8 @@ document.querySelector('.add-task__button').addEventListener('click', () => {
 		let id = null
 		const text = document.querySelector('.tasks__add-task > input').value.trim()
 		const data = getData()
+		console.log(DOMname);
+		const isImportant = DOMname === 'item-favorites' ? true : false
 		user.forEach((element, index) => {
 			if (element.DOMname === DOMname) {
 				id = element.tasks.length + 1
@@ -16,11 +18,11 @@ document.querySelector('.add-task__button').addEventListener('click', () => {
 					id: id,
 					text: text,
 					data: data,
-					isImportant: false
+					isImportant: isImportant
 				})
 			}
 		})
-		createTaskItem(DOMname, id, text, data)
+		createTaskItem(DOMname, id, text, data, isImportant)
 		console.log(user);
 
 		if (document.querySelector(`.${DOMname}-${id} > div > div > span`).clientWidth >= document.querySelector(`.${DOMname}-${id} > div > div`).clientWidth) {
