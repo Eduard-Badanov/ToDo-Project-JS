@@ -36,7 +36,18 @@ document.querySelector('.button-add').addEventListener('click', () => {
 		if (document.querySelector(`.item-created-${numberOfElement + 1} > div > div > span`).clientWidth >= document.querySelector(`.item-created-${numberOfElement + 1} > div > div`).clientWidth) {
 			document.querySelector(`.item-created-${numberOfElement + 1}`).classList.add('animated')
 		}
-		document.querySelector('.scenarios__add-input > input').value = ''	
+		document.querySelector('.scenarios__add-input > input').value = ''
+
+		if (document.querySelector('.scenarios__items-list').childNodes.forEach((element) => {
+			if (element.classList.contains('item-active')) {
+				element.classList.remove('item-active')
+			}
+		})) {}
+		else {
+			document.querySelector(`.item-created-${numberOfElement + 1}`).classList.add('item-active')
+		}
+
+		document.querySelector(`.scenarios__items-list`).scrollTop = document.querySelector(`.scenarios__items-list`).scrollHeight
 	}
 
 	document.querySelector('.scenarios__add-input').classList.add('hidden')

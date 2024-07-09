@@ -27,6 +27,7 @@
 		max-height: 301px;
 		overflow-y: overlay;
 		overflow-x: hidden;
+		scroll-behavior: smooth;
 		&::-webkit-scrollbar {
 			background: none;
 			width: 5px;

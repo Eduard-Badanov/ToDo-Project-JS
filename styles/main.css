@@ -196,6 +196,7 @@
   max-height: 301px;
   overflow-y: overlay;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 .scenarios__items-list::-webkit-scrollbar {
   background: none;
@@ -507,9 +508,6 @@
     width: 75%;
     gap: 15px;
     max-height: none;
-  }
-  .scenarios__add-warning {
-    width: 75%;
   }
   .items-list__item-button, .items-list__item-button-created {
     width: 90%;
