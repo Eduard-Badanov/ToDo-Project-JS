@@ -9,14 +9,12 @@ export function watchingTasksItems() {
     const childNodes = Array.from(tasksList.childNodes);
     childNodes.forEach((element) => {
       if (element) {
-        // console.log(element);
         element.remove();
       }
     });
   }
   const tasks = []
   copyTaskList.forEach((element) => {
-    // console.log(element);
     const DOMname = element.classList[1].slice(0, -2)
     const id = Number(element.classList[1].at(-1))
     const text = element.querySelector('.task-left__text').textContent
