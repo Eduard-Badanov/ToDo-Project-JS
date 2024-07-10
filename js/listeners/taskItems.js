@@ -1,4 +1,4 @@
-import { addCompletedTaskItem } from '../addCompletedTaskItems/addCompletedTaskItem.js'
+import { createCompletedTaskItem } from '../addCompletedTaskItems/createCompletedTaskItem.js'
 import { createTaskItem } from '../addTaskItems/createTaskItem.js'
 import { watchingTasksItems } from '../addTaskItems/watchingTasksItems.js'
 import { showCompletedTasks } from '../listeners/showCompletedTasks.js'
@@ -63,7 +63,8 @@ document.querySelector('.tasks__tasks-list').addEventListener('click', (event) =
 	if (event.target.classList.contains('button-circle__image') || event.target.classList.contains('task-left__button-circle')) {
 		const DOMname = event.target.closest('.tasks-list__task').classList[1].slice(0, -2)
 		const id = Number(event.target.closest('.tasks-list__task').classList[1].at(-1))
-		const text = document.querySelector(`.${DOMname}-${id} > div > div > span`).innerHTML
+		const text = document.querySelector(`.${DOMname}-${id} > div > div > span:nth-child(1)`).innerHTML
+		const data = document.querySelector(`.${DOMname}-${id} > div:nth-child(2) > span`).innerHTML
 		document.querySelector(`.${DOMname}-${id} > div > button > img`).attributes.src.nodeValue = taskIcons.circleActive
 		document.querySelector(`.${DOMname}-${id} > div > div > span`).style.textDecoration = 'line-through'
 		setTimeout(() => document.querySelector(`.${DOMname}-${id} > div > button > img`).attributes.src.nodeValue = taskIcons.circle, 300)
@@ -71,7 +72,7 @@ document.querySelector('.tasks__tasks-list').addEventListener('click', (event) =
 		setTimeout(() => {
 			user.forEach((element) => {
 				if (element.DOMname === DOMname) {
-					addCompletedTaskItem(DOMname, id, text)
+					createCompletedTaskItem(DOMname, id, text, data)
 					
 					showCompletedTasks()
 
@@ -128,7 +129,33 @@ document.querySelector('.tasks__tasks-list').addEventListener('click', (event) =
 		}
 	}
 })
+document.querySelector('.tasks__completed-tasks-list').addEventListener('click', (event) => {
+	if (event.target.closest('.completed-task__button-delete')) {
+		const DOMname = event.target.closest('.completed-tasks-list__task').classList[1].slice(0, -2)
+		const id = Number(event.target.closest('.completed-tasks-list__task').classList[1].at(-1))
+		const text = document.querySelector(`.${DOMname}-${id} > div > span:nth-child(1)`).innerHTML
+		const data = document.querySelector(`.${DOMname}-${id} > div > span:nth-child(2)`).innerHTML
+		
+		createTaskItem(DOMname, id, text, data)
+		watchingTasksItems()
 
+		event.target.closest('.completed-tasks-list__task').remove()
+
+		showCompletedTasks()
+
+		user.forEach((element) => {
+			if (element.DOMname === DOMname) {
+				element.tasks.push({
+					id: id,
+					text: text,
+					data: data,
+					isImportant: false
+				})
+				console.log('Удаление элемента из завершенных задач');
+			}
+		})
+	}
+})
 
 
 
