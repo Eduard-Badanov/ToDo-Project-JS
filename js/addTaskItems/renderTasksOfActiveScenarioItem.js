@@ -3,7 +3,6 @@ import { checkSorting } from '../listeners/sortingElements.js'
 import { user } from '../userInfo.js'
 import { watchingTasksItems } from './watchingTasksItems.js'
 
-
 export function renderTasksOfActiveScenarioItem(DOMname) {
 	if (DOMname !== 'item-all' && DOMname !== 'item-favorites') {
 		user.forEach((element) => {

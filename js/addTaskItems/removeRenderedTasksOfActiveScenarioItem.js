@@ -1,7 +1,7 @@
 import { user } from '../userInfo.js'
 
 export function removeRenderedTasksOfActiveScenarioItem(DOMname) {
-	if (DOMname !== 'item-all' && DOMname !== 'item-favorites') {
+	if (DOMname !== 'item-all' && DOMname !== 'item-favorites' && DOMname !== 'special') {
 		user.forEach((element) => {
 			if (element.DOMname === DOMname) {
 				if (element.tasks.length > 0) {
@@ -14,23 +14,19 @@ export function removeRenderedTasksOfActiveScenarioItem(DOMname) {
 				}
 			}
 		})
-	} else if (DOMname === 'item-all') {
-		document.querySelector('.tasks__tasks-list').childNodes.forEach((el) => {
-			while (document.querySelector('.tasks__tasks-list').childNodes.length > 0) {
-				document.querySelector('.tasks__tasks-list').childNodes.forEach((element) => {
-					element.remove()
-					console.log(element);
-				})
-			}
-		})
+	} else if (DOMname === 'item-all' || DOMname === 'special') {
+		while (document.querySelector('.tasks__tasks-list').childNodes.length > 0) {
+			document.querySelector('.tasks__tasks-list').childNodes.forEach((element) => {
+				element.remove()
+				console.log(element);
+			})
+		}
 	} else if (DOMname === 'item-favorites') {
-		document.querySelector('.tasks__tasks-list').childNodes.forEach((el) => {
-			while (document.querySelector('.tasks__tasks-list').childNodes.length > 0) {
-				document.querySelector('.tasks__tasks-list').childNodes.forEach((element) => {
-					element.remove()
-					console.log(element);
-				})
-			}
-		})
+		while (document.querySelector('.tasks__tasks-list').childNodes.length > 0) {
+			document.querySelector('.tasks__tasks-list').childNodes.forEach((element) => {
+				element.remove()
+				console.log(element);
+			})
+		}
 	}
 }

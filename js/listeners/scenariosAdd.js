@@ -1,4 +1,6 @@
 import { createScenarioItem } from '../addScenarioItems/createScenarioItem.js'
+import { removeRenderedTasksOfActiveScenarioItem } from '../addTaskItems/removeRenderedTasksOfActiveScenarioItem.js'
+import { renderDefaultTasksOfActiveScenarioItem } from '../addTaskItems/renderDefaultTasksOfActiveScenarioItem.js'
 import { scenarioIcons } from '../pathsToIcons.js'
 import { user } from '../userInfo.js'
 
@@ -32,6 +34,7 @@ document.querySelector('.button-add').addEventListener('click', () => {
 			tasks: []
 		})
 		createScenarioItem(text, `item-created-${numberOfElement + 1}`, scenarioIcons.info, true)
+		removeRenderedTasksOfActiveScenarioItem('special')
 		console.log(user);
 		if (document.querySelector(`.item-created-${numberOfElement + 1} > div > div > span`).clientWidth >= document.querySelector(`.item-created-${numberOfElement + 1} > div > div`).clientWidth) {
 			document.querySelector(`.item-created-${numberOfElement + 1}`).classList.add('animated')
@@ -58,14 +61,30 @@ document.querySelector('.scenarios__add-input > input').addEventListener('keydow
 		document.querySelector('.button-add').click()
 	}
 })
+document.querySelector('.scenarios__add-input > input').addEventListener('keydown', (e) => {
+	if (e.key === 'Escape') {
+		document.querySelector('.button-cancel').click()
+	}
+})
 document.querySelector('.scenarios__items-list').addEventListener('click', (event) => {
 	if (event.target.classList.contains('item-button-created__image-delete')) {
+		const DOMname = event.target.closest('button').classList[1]
 		user.forEach((element, index) => {
-			if (element.DOMname === event.target.closest('button').classList[1]) {
+			if (element.DOMname === DOMname) {
 				delete user[index]
+			}
+			if (element.tasks.length > 0) {
+				document.querySelector('.tasks__tasks-list').childNodes.forEach((el) => {
+					if (el.classList[1].slice(0, -2) === DOMname) {
+						el.remove()
+					}
+				})
 			}
 		})
 		event.target.closest('button').remove()
-		console.log(user);
+		
+		setTimeout(() => {
+			renderDefaultTasksOfActiveScenarioItem()
+		}, 1)
 	}
 })

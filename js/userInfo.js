@@ -11,13 +11,13 @@ export let user = [
         tasks: [
             {
 				id: 1,
-                text: 'Сделать техническое задание',
+                text: 'Задача-1',
                 data: '22:30 28.06.2024',
                 isImportant: true
             },
             {
 				id: 2,
-                text: 'Сделать техническое задание',
+                text: 'Задача-2',
                 data: '22:30 28.06.2024',
                 isImportant: false
             }
@@ -31,7 +31,7 @@ export let user = [
         tasks: [
             {
 				id: 1,
-                text: 'Сделать техническое задание',
+                text: 'Задача-3',
                 data: '22:30 28.06.2024',
                 isImportant: false
             },
@@ -43,56 +43,28 @@ export let user = [
         text: 'Рабочие дела',
         DOMname: 'item-work',
         isCreated: false,
-        tasks: [
-            // {
-			// 	id: 0,
-            //     text: 'Сделать техническое задание',
-            //     data: '22:30 28.06.2024',
-            //     isImportant: false
-            // }
-		]
+        tasks: []
     },
     {
         icon: scenarioIcons.home,
         text: 'Домашние дела',
         DOMname: 'item-home',
         isCreated: false,
-        tasks: [
-            // {
-			// 	id: 0,
-            //     text: 'Сделать техническое задание',
-            //     data: '22:30 28.06.2024',
-            //     isImportant: false
-            // }
-		]
+        tasks: []
     },
     {
         icon: scenarioIcons.bookmark,
         text: 'Избранное',
         DOMname: 'item-favorites',
         isCreated: false,
-        tasks: [
-            // {
-			// 	id: 0,
-            //     text: 'Сделать техническое задание',
-            //     data: '22:30 28.06.2024',
-            //     isImportant: true
-            // }
-		]
+        tasks: []
     },
     {
         icon: scenarioIcons.info,
         text: 'На пятницу',
         DOMname: 'item-created-1',
         isCreated: true,
-        tasks: [
-            // {
-			// 	id: 0,
-            //     text: 'Сделать техническое задание',
-            //     data: '22:30 28.06.2024',
-            //     isImportant: false
-            // }
-		]
+        tasks: []
     },
     {
         icon: scenarioIcons.info,
