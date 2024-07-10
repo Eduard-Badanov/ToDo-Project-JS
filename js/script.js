@@ -1,4 +1,3 @@
-import { addCompletedTaskItem } from './addCompletedTaskItems/addCompletedTaskItem.js'
 import { addItems } from './addScenarioItems/addItems.js'
 import { createTaskItem } from './addTaskItems/createTaskItem.js'
 import { watchingTasksItems } from './addTaskItems/watchingTasksItems.js'
@@ -10,8 +9,6 @@ import('./listeners/showCompletedTasks.js')
 import('./listeners/taskItems.js')
 
 addItems()
-addCompletedTaskItem('item-all', 0, 'Test')
-
 
 window.addEventListener('load', () => {
 	document.querySelector('.item-all').classList.add('item-active')

@@ -1,6 +1,7 @@
 import { addCompletedTaskItem } from '../addCompletedTaskItems/addCompletedTaskItem.js'
 import { createTaskItem } from '../addTaskItems/createTaskItem.js'
 import { watchingTasksItems } from '../addTaskItems/watchingTasksItems.js'
+import { showCompletedTasks } from '../listeners/showCompletedTasks.js'
 import { taskIcons } from '../pathsToIcons.js'
 import { user } from '../userInfo.js'
 
@@ -71,7 +72,9 @@ document.querySelector('.tasks__tasks-list').addEventListener('click', (event) =
 			user.forEach((element) => {
 				if (element.DOMname === DOMname) {
 					addCompletedTaskItem(DOMname, id, text)
-	
+					
+					showCompletedTasks()
+
 					if (document.querySelector(`.completed-tasks-list__task.${DOMname}-${id} > div > span`).clientWidth >= document.querySelector(`.completed-tasks-list__task.${DOMname}-${id} > div`).clientWidth) {
 						document.querySelector(`.completed-tasks-list__task.${DOMname}-${id}`).classList.add('animated')
 					}
@@ -84,6 +87,7 @@ document.querySelector('.tasks__tasks-list').addEventListener('click', (event) =
 					})
 					delete element.tasks[indexOfTask]
 					event.target.closest('.tasks-list__task').remove()
+					console.log(user);
 				}
 			})	
 		}, 500)
