@@ -1,12 +1,37 @@
 import { userParameters } from '../userInfo.js'
+// import { removeRenderedTasksOfActiveScenarioItem} from '../addTaskItems/removeRenderedTasksOfActiveScenarioItem.js'
+// import { renderTasksOfActiveScenarioItem } from '../addTaskItems/renderTasksOfActiveScenarioItem.js'
 
+
+export function checkSorting() {
+	if (userParameters.sorting) {
+		document.querySelector('.sort-button__icon').classList.add('rotated')
+		return true
+	} else {
+		document.querySelector('.sort-button__icon').classList.remove('rotated')
+		return false
+	}
+}
+
+document.querySelector('.tasks__sort-button').addEventListener('click', () => {
+	if (!checkSorting()) {
+		userParameters.sorting = true
+	} else {
+		userParameters.sorting = false
+	}
+})
+
+window.addEventListener('load', checkSorting)
+
+/*
 export function isReversed() {
 	if (userParameters.sorting) {
 		document.querySelector('.sort-button__icon').classList.add('rotated')
-		document.querySelector('.tasks__tasks-list').classList.add('reversed')
+		return true
 	} else {
 		document.querySelector('.sort-button__icon').classList.remove('rotated')
-		document.querySelector('.tasks__tasks-list').classList.remove('reversed')
+		return false
+		// document.querySelector('.tasks__tasks-list').classList.remove('reversed')
 	}
 }
 
@@ -21,3 +46,14 @@ document.querySelector('.tasks__sort-button').addEventListener('click', () => {
 })
 
 window.addEventListener('load', isReversed)
+
+const target = document.querySelector('.tasks__sort-button');
+const observer = new MutationObserver((mutations) => {
+  mutations.forEach(mutation => {
+    console.log(mutation);
+	document.querySelector('.tasks__tasks-list').childNodes
+  });
+});
+
+observer.observe(target, { attributes: true, childList: true, subtree: true });
+*/

@@ -64,6 +64,13 @@ button {
 	transition: transform 0.15s ease-in-out;
 }
 .reversed {
-	flex-direction: column;
+	// flex-direction: column-reverse;
 	transition: flex-direction 0.15s ease-in-out;
+}
+.scenarios__add-button,
+.add-input__buttons > button,
+.add-task__button {
+	&:active {
+		background: #108554 !important;
+	}
 }

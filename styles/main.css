@@ -797,6 +797,11 @@ button {
 }
 
 .reversed {
-  flex-direction: column;
   transition: flex-direction 0.15s ease-in-out;
+}
+
+.scenarios__add-button:active,
+.add-input__buttons > button:active,
+.add-task__button:active {
+  background: #108554 !important;
 }/*# sourceMappingURL=main.css.map */

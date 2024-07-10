@@ -1,4 +1,5 @@
-import { isReversed } from './listeners/sortingElements.js'
+import { watchingTasksItems } from './addTaskItems/watcingTasksItems.js'
+import { checkSorting } from './listeners/sortingElements.js'
 import { scenarioIcons } from './pathsToIcons.js'
 
 export let user = [
@@ -99,12 +100,24 @@ export let user = [
         DOMname: 'item-created-2',
         isCreated: true,
         tasks: [
-            // {
-            //     id: 0,
-            //     text: 'Проверка',
-            //     data: '22:30 28.06.2024',
-            //     isImportant: true
-            // }
+            {
+                id: 1,
+                text: 'Проверка-1',
+                data: '15:24 09.07.2024',
+                isImportant: true
+            },
+            {
+                id: 2,
+                text: 'Проверка-2',
+                data: '15:25 09.07.2024',
+                isImportant: false
+            },
+            {
+                id: 3,
+                text: 'Проверка-3',
+                data: '15:26 09.07.2024',
+                isImportant: true
+            }
         ]
     }
 ]
@@ -133,7 +146,8 @@ userParameters = new Proxy(userParameters, {
         if (prop !== 'length') {
             target[prop] = value
             console.log('установка свойства', value);
-            isReversed()
+            checkSorting()
+            watchingTasksItems()
         }
         return true
     }

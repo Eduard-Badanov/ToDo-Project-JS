@@ -28,7 +28,7 @@ document.querySelector('.add-task__button').addEventListener('click', () => {
 		if (document.querySelector(`.${DOMname}-${id} > div > div > span`).clientWidth >= document.querySelector(`.${DOMname}-${id} > div > div`).clientWidth) {
 			document.querySelector(`.${DOMname}-${id}`).classList.add('animated')
 		}
-		document.querySelector('.tasks__add-task > input').value = ''	
+		document.querySelector('.tasks__add-task > input').value = ''
 	}
 })
 document.querySelector('.tasks__add-task > input').addEventListener('keydown', (e) => {
