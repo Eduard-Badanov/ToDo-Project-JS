@@ -5,7 +5,6 @@ document.querySelector('.scenarios__items-list').addEventListener('click', (even
 	if (event.target.closest('button') !== null) {
 		if (document.querySelector('.scenarios__items-list').childNodes.forEach((element) => {
 			if (element.classList.contains('item-active')) {
-				// console.log(element.classList[1]);
 				element.classList.remove('item-active')
 				removeRenderedTasksOfActiveScenarioItem(element.classList[1])
 			}

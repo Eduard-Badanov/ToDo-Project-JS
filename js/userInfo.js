@@ -1,4 +1,4 @@
-import { watchingTasksItems } from './addTaskItems/watcingTasksItems.js'
+import { watchingTasksItems } from './addTaskItems/watchingTasksItems.js'
 import { checkSorting } from './listeners/sortingElements.js'
 import { scenarioIcons } from './pathsToIcons.js'
 

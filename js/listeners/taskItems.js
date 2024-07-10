@@ -1,5 +1,6 @@
 import { addCompletedTaskItem } from '../addCompletedTaskItems/addCompletedTaskItem.js'
 import { createTaskItem } from '../addTaskItems/createTaskItem.js'
+import { watchingTasksItems } from '../addTaskItems/watchingTasksItems.js'
 import { taskIcons } from '../pathsToIcons.js'
 import { user } from '../userInfo.js'
 
@@ -22,7 +23,9 @@ document.querySelector('.add-task__button').addEventListener('click', () => {
 				})
 			}
 		})
+		
 		createTaskItem(DOMname, id, text, data, isImportant)
+		watchingTasksItems()
 		console.log(user);
 
 		if (document.querySelector(`.${DOMname}-${id} > div > div > span`).clientWidth >= document.querySelector(`.${DOMname}-${id} > div > div`).clientWidth) {
@@ -98,6 +101,7 @@ document.querySelector('.tasks__tasks-list').addEventListener('click', (event) =
 					element.tasks.forEach((el) => {
 						if (el.id === id) {
 							el.isImportant = true
+							watchingTasksItems()
 							console.log('установка важности');
 						}
 					})
@@ -111,6 +115,7 @@ document.querySelector('.tasks__tasks-list').addEventListener('click', (event) =
 					element.tasks.forEach((el) => {
 						if (el.id === id) {
 							el.isImportant = false
+							watchingTasksItems()
 							console.log('удаление важности');
 						}
 					})
