@@ -11,7 +11,6 @@ document.querySelector('.add-task__button').addEventListener('click', () => {
 		let id = null
 		const text = document.querySelector('.tasks__add-task > input').value.trim()
 		const data = getData()
-		console.log(DOMname);
 		const isImportant = DOMname === 'item-favorites' ? true : false
 		user.forEach((element, index) => {
 			if (element.DOMname === DOMname) {
@@ -27,7 +26,6 @@ document.querySelector('.add-task__button').addEventListener('click', () => {
 		
 		createTaskItem(DOMname, id, text, data, isImportant)
 		watchingTasksItems()
-		console.log(user);
 
 		if (document.querySelector(`.${DOMname}-${id} > div > div > span`).clientWidth >= document.querySelector(`.${DOMname}-${id} > div > div`).clientWidth) {
 			document.querySelector(`.${DOMname}-${id}`).classList.add('animated')
@@ -88,7 +86,6 @@ document.querySelector('.tasks__tasks-list').addEventListener('click', (event) =
 					})
 					delete element.tasks[indexOfTask]
 					event.target.closest('.tasks-list__task').remove()
-					console.log(user);
 				}
 			})	
 		}, 500)
@@ -102,12 +99,10 @@ document.querySelector('.tasks__tasks-list').addEventListener('click', (event) =
 			document.querySelector(`.${DOMname}-${id} > div:nth-child(2) > button > img`).attributes.src.nodeValue = taskIcons.starActive
 			user.forEach((element) => {
 				if (element.DOMname === DOMname) {
-					console.log(element);
 					element.tasks.forEach((el) => {
 						if (el.id === id) {
 							el.isImportant = true
 							watchingTasksItems()
-							console.log('установка важности');
 						}
 					})
 				}
@@ -116,12 +111,10 @@ document.querySelector('.tasks__tasks-list').addEventListener('click', (event) =
 			document.querySelector(`.${DOMname}-${id} > div:nth-child(2) > button > img`).attributes.src.nodeValue = taskIcons.star
 			user.forEach((element) => {
 				if (element.DOMname === DOMname) {
-					console.log(element);
 					element.tasks.forEach((el) => {
 						if (el.id === id) {
 							el.isImportant = false
 							watchingTasksItems()
-							console.log('удаление важности');
 						}
 					})
 				}
@@ -151,7 +144,6 @@ document.querySelector('.tasks__completed-tasks-list').addEventListener('click',
 					data: data,
 					isImportant: false
 				})
-				console.log('Удаление элемента из завершенных задач');
 			}
 		})
 	}

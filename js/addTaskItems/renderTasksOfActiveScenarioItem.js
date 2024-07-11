@@ -8,7 +8,6 @@ export function renderTasksOfActiveScenarioItem(DOMname) {
 		user.forEach((element) => {
 			if (element.DOMname === DOMname) {
 				if (element.tasks.length > 0) {
-					console.log(element.tasks)
 					if (checkSorting()) {
 						element.tasks.sort((a, b) => {
 							return new Date(a.data) - new Date(b.data)

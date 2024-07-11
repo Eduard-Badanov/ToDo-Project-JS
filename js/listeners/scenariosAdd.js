@@ -35,7 +35,6 @@ document.querySelector('.button-add').addEventListener('click', () => {
 		})
 		createScenarioItem(text, `item-created-${numberOfElement + 1}`, scenarioIcons.info, true)
 		removeRenderedTasksOfActiveScenarioItem('special')
-		console.log(user);
 		if (document.querySelector(`.item-created-${numberOfElement + 1} > div > div > span`).clientWidth >= document.querySelector(`.item-created-${numberOfElement + 1} > div > div`).clientWidth) {
 			document.querySelector(`.item-created-${numberOfElement + 1}`).classList.add('animated')
 		}
