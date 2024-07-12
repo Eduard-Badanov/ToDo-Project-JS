@@ -6,6 +6,5 @@ export function deleteEmptyElements() {
         acc.push(element)
         return acc
     }, []);
-    console.log(user);
     return user;
 }
