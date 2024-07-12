@@ -1,10 +1,76 @@
-*, *::before, *::after {
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import '_main-block.scss';
+@import 'scenarios/_scenarios.scss';
+@import 'tasks/_tasks.scss';
+@import '_adaptations.scss';
+
+*,
+*::before,
+*::after {
 	box-sizing: border-box;
 }
+* {
+	// outline: 3px solid green
+}
 body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-sizing: border-box;
+	height: 100vh;
 	margin: 0;
 	padding: 0;
-	height: 100vh;
-	font-family: sans-serif;
-	box-sizing: border-box;
+	background-image: url(../assets/background.svg);
+	background-size: cover;
+	background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+	font-family: 'Inter';
+	font-weight: 400;
+	font-size: 16px;
+	color: #fff;
+	&::-webkit-scrollbar {
+		background: #272727;
+		width: 5px;
+		&-thumb {
+			border-radius: 10px;
+			background: #1acd81;
+			outline: .8px solid #43e5a0;
+		}
+	}
+}
+button {
+	border: 0;
+	background: none;
+	padding: 0;
+}
+.todo {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.todo__title {
+	margin-bottom: 45px;
+	font-weight: 500;
+	font-size: 40px;
+	text-transform: uppercase;
+}
+.hidden {
+	display: none;
+	transition: display 0.15s ease-in-out;
+}
+.rotated {
+	transform: rotate(180deg);
+	transition: transform 0.15s ease-in-out;
+}
+.reversed {
+	// flex-direction: column-reverse;
+	transition: flex-direction 0.15s ease-in-out;
+}
+.scenarios__add-button,
+.add-input__buttons > button,
+.add-task__button {
+	&:active {
+		background: #108554 !important;
+	}
 }
