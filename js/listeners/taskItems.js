@@ -2,6 +2,7 @@ import { createCompletedTaskItem } from '../addCompletedTaskItems/createComplete
 import { createTaskItem } from '../addTaskItems/createTaskItem.js'
 import { watchingTasksItems } from '../addTaskItems/watchingTasksItems.js'
 import { showCompletedTasks } from '../listeners/showCompletedTasks.js'
+import { saveUserFromStorage } from '../localStorage/saveUserToStorage.js'
 import { taskIcons } from '../pathsToIcons.js'
 import { user } from '../userInfo.js'
 
@@ -25,8 +26,9 @@ document.querySelector('.add-task__button').addEventListener('click', () => {
 		})
 		
 		createTaskItem(DOMname, id, text, data, isImportant)
+		saveUserFromStorage()
 		watchingTasksItems()
-
+		
 		if (document.querySelector(`.${DOMname}-${id} > div > div > span`).clientWidth >= document.querySelector(`.${DOMname}-${id} > div > div`).clientWidth) {
 			document.querySelector(`.${DOMname}-${id}`).classList.add('animated')
 		}
@@ -55,6 +57,7 @@ document.querySelector('.tasks__tasks-list').addEventListener('click', (event) =
 				event.target.closest('.tasks-list__task').remove()
 			}
 		})
+		saveUserFromStorage()
 	}
 })
 document.querySelector('.tasks__tasks-list').addEventListener('click', (event) => {
@@ -87,7 +90,8 @@ document.querySelector('.tasks__tasks-list').addEventListener('click', (event) =
 					delete element.tasks[indexOfTask]
 					event.target.closest('.tasks-list__task').remove()
 				}
-			})	
+			})
+			saveUserFromStorage()
 		}, 500)
 	}
 })
@@ -107,6 +111,7 @@ document.querySelector('.tasks__tasks-list').addEventListener('click', (event) =
 					})
 				}
 			})
+			saveUserFromStorage()
 		} else {
 			document.querySelector(`.${DOMname}-${id} > div:nth-child(2) > button > img`).attributes.src.nodeValue = taskIcons.star
 			user.forEach((element) => {
@@ -119,6 +124,7 @@ document.querySelector('.tasks__tasks-list').addEventListener('click', (event) =
 					})
 				}
 			})
+			saveUserFromStorage()
 		}
 	}
 })
@@ -146,6 +152,7 @@ document.querySelector('.tasks__completed-tasks-list').addEventListener('click',
 				})
 			}
 		})
+		saveUserFromStorage()
 	}
 })
 

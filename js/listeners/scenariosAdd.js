@@ -1,6 +1,7 @@
 import { createScenarioItem } from '../addScenarioItems/createScenarioItem.js'
 import { removeRenderedTasksOfActiveScenarioItem } from '../addTaskItems/removeRenderedTasksOfActiveScenarioItem.js'
 import { renderDefaultTasksOfActiveScenarioItem } from '../addTaskItems/renderDefaultTasksOfActiveScenarioItem.js'
+import { saveUserFromStorage } from '../localStorage/saveUserToStorage.js'
 import { scenarioIcons } from '../pathsToIcons.js'
 import { user } from '../userInfo.js'
 
@@ -34,7 +35,9 @@ document.querySelector('.button-add').addEventListener('click', () => {
 			tasks: []
 		})
 		createScenarioItem(text, `item-created-${numberOfElement + 1}`, scenarioIcons.info, true)
+		saveUserFromStorage()
 		removeRenderedTasksOfActiveScenarioItem('special')
+		
 		if (document.querySelector(`.item-created-${numberOfElement + 1} > div > div > span`).clientWidth >= document.querySelector(`.item-created-${numberOfElement + 1} > div > div`).clientWidth) {
 			document.querySelector(`.item-created-${numberOfElement + 1}`).classList.add('animated')
 		}
@@ -80,6 +83,7 @@ document.querySelector('.scenarios__items-list').addEventListener('click', (even
 				})
 			}
 		})
+		saveUserFromStorage()
 		event.target.closest('button').remove()
 		
 		setTimeout(() => {

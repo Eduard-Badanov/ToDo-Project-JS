@@ -1,3 +1,4 @@
+import { saveUserFromStorage } from '../localStorage/saveUserToStorage.js'
 import { user } from '../userInfo.js'
 
 document.querySelector('.tasks__delete-button').addEventListener('click', () => {
@@ -16,6 +17,7 @@ document.querySelector('.tasks__delete-button').addEventListener('click', () => 
 					})
 				}
 			})
+			saveUserFromStorage()
 		})
 	}
 })

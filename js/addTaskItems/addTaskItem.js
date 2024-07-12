@@ -1,3 +1,4 @@
+import { saveUserFromStorage } from '../localStorage/saveUserToStorage.js'
 import { user } from '../userInfo.js'
 import { createTaskItem } from './createTaskItem.js'
 
@@ -8,6 +9,7 @@ export function addTaskItem() {
 			createTaskItem(DOMname, element.id, element.text, element.data, element.isImportant)
 		})
 	});
+	saveUserFromStorage()
 	const result = user.reduce((acc, el) => {
 		return acc += el.tasks.length
 	}, 0)
