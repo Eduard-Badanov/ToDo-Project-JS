@@ -1,0 +1,43 @@
+.tasks__completed-tasks-list {
+	display: flex;
+	align-items: flex-end;
+	flex-direction: column-reverse;
+	gap: 15px;
+	width: 100%;
+	& > div {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		background: #11563a;
+		border: 0.8px solid #43e5a0;
+		border-radius: 8px;
+		padding: 0px 10px 0px 14px;
+		width: 500px;
+		height: 40px;
+		&.animated > div > span {
+			animation-duration: 10s;
+			animation-name: slide;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite;
+		}
+		& > div {
+			display: flex;
+			justify-content: start;
+			width: 400px;
+			overflow: hidden;
+			& > span {
+				position: relative;
+				display: flex;
+				flex-direction: row-reverse;
+				white-space: nowrap;
+			}
+		}
+		& > button {
+			height: 22px;
+			&:hover {
+				cursor: pointer;
+			}
+		}
+	}
+}

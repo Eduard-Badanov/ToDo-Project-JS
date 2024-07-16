@@ -1,0 +1,71 @@
+.items-list__item-button,
+.items-list__item-button-created {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	flex-direction: row;
+	width: 185px;
+	height: 32px;
+	padding: 8px 7px;
+	gap: 10px;
+	transition: all .1s ease-in;
+	border-radius: 5px;
+	& > div, & > div > div {
+		display: flex;
+		justify-content: start;
+		width: 150px;
+		overflow: hidden;
+	}
+	&.animated > div > span, &.animated > div > div > span {
+		animation-duration: 8s;
+		animation-name: slide;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+	}
+	& > img {
+		width: 16px;
+		height: 16px;
+	}
+	& > span, & > div > span, & > div > div > span {
+		position: relative;
+		display: flex;
+		flex-direction: row-reverse;
+		font-size: 16px;
+		white-space: nowrap;
+		font-family: 'Inter';
+		color: #fff;
+	}
+	&:hover, &.item-active {
+		background: rgba(255, 255, 255, 0.1); 
+		cursor: pointer;
+	}
+}
+.item-button-created__prepend {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	flex-direction: row;
+	gap: 10px;
+	width: 185px;
+}
+.items-list__item-button-created {
+	display: flex;
+	gap: 0;
+	justify-content: space-between;
+	& > img {
+		opacity: 0;
+	}
+	&:hover {
+		& div > span {
+			max-width: 130px;
+		}
+		& > img {
+			transition: all .1s ease-in-out;
+			opacity: 1;
+		}
+	}
+	&.item-active > img {
+		transition: all .1s ease-in-out;
+		opacity: 1;
+	}
+}

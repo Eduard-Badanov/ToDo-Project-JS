@@ -1,0 +1,88 @@
+@mixin flexRowCenter {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.tasks__tasks-list {
+	display: flex;
+	align-items: center;
+	flex-direction: column-reverse;
+	gap: 15px;
+	width: 530px;
+}
+.tasks-list {
+	&__task {
+		@include flexRowCenter;
+		justify-content: space-between;
+		background: #11563a;
+		border: 0.8px solid #43e5a0;
+		border-radius: 8px;
+		padding: 0px 10px 0px 8px;
+		width: 100%;
+		height: 40px;
+		&.animated > div > div > span {
+			animation-duration: 10s;
+			animation-name: slide;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite;
+		}
+		@keyframes slide {
+			0% {
+				transform: translateX(0);
+			}
+			50% {
+				transform: translateX(-120%);
+				opacity: 1;
+				visibility: visible;
+			}
+			50.1% {
+				opacity: 0;
+				visibility: hidden;
+			}
+			50.1001% {
+				visibility: hidden;			
+				opacity: 0;
+				transform: translateX(100%);
+				opacity: 0;
+				visibility: hidden;
+			}
+			50.2% {
+				visibility: visible;
+				opacity: 1;
+			}
+			100% {
+				transform: translateX(0);
+			}
+		}
+	}
+}
+.task-left,
+.task-right {
+	@include flexRowCenter;
+	justify-content: space-between;
+	gap: 5px;
+	& > button {
+		height: 24px;
+		&:hover {
+			cursor: pointer;
+		}
+	}
+	&__body {
+		display: flex;
+		justify-content: start;
+		width: 300px;
+		overflow: hidden;
+	}
+	&__text {
+		position: relative;
+		display: flex;
+		flex-direction: row-reverse;
+		font-size: 16px;
+		white-space: nowrap;
+		font-family: 'Inter';
+	}
+	&__data {
+		font-size: 13px;
+	}
+}
