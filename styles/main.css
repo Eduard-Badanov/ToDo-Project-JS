@@ -811,4 +811,21 @@ button {
 .add-input__buttons > button:active,
 .add-task__button:active {
   background: #108554 !important;
+}
+
+.todo__title,
+.scenarios__title,
+.scenarios__items-list,
+.scenarios__add-button,
+.scenarios__add-input > input,
+.add-input__buttons > div > button,
+.tasks__title,
+.tasks__add-task > input,
+.tasks__add-task > button,
+.tasks__sort-button,
+.tasks__delete-button,
+.tasks-list__task,
+.completed-tasks__button,
+.completed-tasks-list__task {
+  filter: drop-shadow(0 4px 5px rgba(0, 0, 0, 0.2509803922));
 }/*# sourceMappingURL=main.css.map */
