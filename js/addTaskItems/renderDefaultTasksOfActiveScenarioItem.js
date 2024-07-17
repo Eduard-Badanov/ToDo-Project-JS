@@ -7,6 +7,11 @@ export function renderDefaultTasksOfActiveScenarioItem() {
 	user.forEach((element) => {
 		element.tasks.forEach((el) => {
 			createTaskItem(element.DOMname, el.id, el.text, el.data, el.isImportant)
+			setTimeout(() => {
+				if (document.querySelector(`.${element.DOMname}-${el.id} > div > div > span`).clientWidth >= document.querySelector(`.${element.DOMname}-${el.id} > div > div`).clientWidth) {
+					document.querySelector(`.${element.DOMname}-${el.id}`).classList.add('animated')
+				}
+			}, 1000)
 		})
 		watchingTasksItems()
 	})

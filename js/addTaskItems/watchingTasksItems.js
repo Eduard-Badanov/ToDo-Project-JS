@@ -38,6 +38,9 @@ export function watchingTasksItems() {
       return a.isImportant - b.isImportant
     }).forEach((el) => {
       createTaskItem(el.DOMname, el.id, el.text, el.data, el.isImportant)
+      if (document.querySelector(`.${el.DOMname}-${el.id} > div > div > span`).clientWidth >= document.querySelector(`.${el.DOMname}-${el.id} > div > div`).clientWidth) {
+        document.querySelector(`.${el.DOMname}-${el.id}`).classList.add('animated')
+      }
     })
   } else {
     tasks.sort((a, b) => {
@@ -46,6 +49,9 @@ export function watchingTasksItems() {
       return a.isImportant - b.isImportant
     }).forEach((el) => {
       createTaskItem(el.DOMname, el.id, el.text, el.data, el.isImportant)
+      if (document.querySelector(`.${el.DOMname}-${el.id} > div > div > span`).clientWidth >= document.querySelector(`.${el.DOMname}-${el.id} > div > div`).clientWidth) {
+        document.querySelector(`.${el.DOMname}-${el.id}`).classList.add('animated')
+      }
     })
   }
 }
