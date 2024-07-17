@@ -71,19 +71,6 @@ button {
 		background: #108554 !important;
 	}
 }
-.todo__title,
-.scenarios__title,
-.scenarios__items-list,
-.scenarios__add-button,
-.scenarios__add-input > input,
-.add-input__buttons > div > button,
-.tasks__title,
-.tasks__add-task > input,
-.tasks__add-task > button,
-.tasks__sort-button,
-.tasks__delete-button,
-.tasks-list__task,
-.completed-tasks__button,
-.completed-tasks-list__task {
+.todo {
 	filter: drop-shadow(0 4px 5px #00000040)
 }
