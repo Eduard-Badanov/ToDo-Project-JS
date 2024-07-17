@@ -289,3 +289,8 @@
 		flex-direction: row !important;
 	}
 }
+@media screen and (width <= 1050px) and (height >= 901px) {
+	.todo {
+		padding-top: 40px;
+	}
+}

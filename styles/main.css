@@ -734,6 +734,11 @@
     flex-direction: row !important;
   }
 }
+@media screen and (width <= 1050px) and (height >= 901px) {
+  .todo {
+    padding-top: 40px;
+  }
+}
 *,
 *::before,
 *::after {
@@ -748,6 +753,7 @@ body {
   height: 100vh;
   margin: 0;
   padding: 0;
+  background-color: #272727;
   background-image: url(../assets/background.svg);
   background-size: cover;
   background-repeat: no-repeat;
