@@ -1,10 +1,10 @@
-// import legacy from '@vitejs/plugin-legacy'
+import legacy from '@vitejs/plugin-legacy'
 import { defineConfig } from 'vite'
 import { ViteMinifyPlugin } from 'vite-plugin-minify'
 
 export default defineConfig({
 	plugins: [
-		// legacy({targets: ['defaults', 'not IE 11']}),
+		legacy({targets: ['defaults', 'not IE 11']}),
 		ViteMinifyPlugin()
 	],
 	build: {
