@@ -1,9 +1,11 @@
+import viteLegacyPlugin from '@vitejs/plugin-legacy'
 import { defineConfig } from 'vite'
 import { ViteMinifyPlugin } from 'vite-plugin-minify'
 
 export default defineConfig({
 	base: './',
 	plugins: [
+		viteLegacyPlugin(),
 		ViteMinifyPlugin()
 	],
 	build: {
