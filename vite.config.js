@@ -1,10 +1,9 @@
-import legacy from '@vitejs/plugin-legacy'
 import { defineConfig } from 'vite'
 import { ViteMinifyPlugin } from 'vite-plugin-minify'
 
 export default defineConfig({
+	base: './',
 	plugins: [
-		legacy({targets: ['defaults', 'not IE 11']}),
 		ViteMinifyPlugin()
 	],
 	build: {
@@ -14,6 +13,7 @@ export default defineConfig({
 		cssCodeSplit: true,
 		assetsInlineLimit: 0,
 		modulePreload: false,
+		emptyOutDir: true,
 		rollupOptions: {
 			output: {
 			  assetFileNames: (assetInfo) => {

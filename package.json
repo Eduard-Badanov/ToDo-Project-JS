@@ -1,7 +1,7 @@
 {
   "name": "package-todo-project-js",
   "private": false,
-  "license": "MIT",
+  "license": "UNLICENSED",
   "version": "1.0.0",
   "type": "module",
   "main": "main.js",
