@@ -11,12 +11,10 @@ user = new Proxy(user, {
         if (prop !== 'length') {
             target[prop] = value
             saveUserFromStorage()
-            console.log('установка свойства', value);
         }
         return true
     },
     deleteProperty: (target, prop) => {
-        console.log('удаление свойства', target[prop]);
         delete target[prop]
         saveUserFromStorage()
         return true
@@ -27,7 +25,6 @@ userParameters = new Proxy(userParameters, {
     set: (target, prop, value) => {
         if (prop !== 'length') {
             target[prop] = value
-            console.log('установка свойства', value);
             checkSorting()
             watchingTasksItems()
             saveUserFromStorage()

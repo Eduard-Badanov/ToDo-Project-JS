@@ -1,21 +1,8 @@
-// @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 @import '_main-block.scss';
 @import 'scenarios/_scenarios.scss';
 @import 'tasks/_tasks.scss';
 @import '_adaptations.scss';
-
-@font-face {
-	font-family: "Inter";
-	font-weight: 400;
-	font-style: normal;
-	src: url(./fonts/Inter-Regular.ttf);
-}
-@font-face {
-	font-family: "Inter";
-	font-weight: 500;
-	font-style: normal;
-	src: url(./fonts/Inter-Medium.ttf);
-}
 
 *,
 *::before,
@@ -30,7 +17,8 @@ body {
 	height: 100vh;
 	margin: 0;
 	padding: 0;
-	background-image: url(./assets/background.svg);
+	background-color: #272727;
+	background-image: url('/images/background.svg');
 	background-size: cover;
 	background-repeat: no-repeat;
     background-position: center;
@@ -74,7 +62,6 @@ button {
 	transition: transform 0.15s ease-in-out;
 }
 .reversed {
-	// flex-direction: column-reverse;
 	transition: flex-direction 0.15s ease-in-out;
 }
 .scenarios__add-button,
@@ -83,4 +70,7 @@ button {
 	&:active {
 		background: #108554 !important;
 	}
+}
+.todo {
+	filter: drop-shadow(0 4px 5px #00000040)
 }

@@ -2,6 +2,7 @@ import { createScenarioItem } from '../addScenarioItems/createScenarioItem.js'
 import { removeRenderedTasksOfActiveScenarioItem } from '../addTaskItems/removeRenderedTasksOfActiveScenarioItem.js'
 import { renderDefaultTasksOfActiveScenarioItem } from '../addTaskItems/renderDefaultTasksOfActiveScenarioItem.js'
 import { saveUserFromStorage } from '../localStorage/saveUserToStorage.js'
+
 import { scenarioIcons } from '../pathsToIcons.js'
 import { user } from '../userInfo.js'
 

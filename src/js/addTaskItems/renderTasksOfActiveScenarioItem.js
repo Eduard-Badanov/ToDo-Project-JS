@@ -16,9 +16,6 @@ export function renderTasksOfActiveScenarioItem(DOMname) {
 						}).forEach((el) => {
 							createTaskItem(DOMname, el.id, el.text, el.data, el.isImportant)
 							watchingTasksItems()
-							if (document.querySelector(`.${DOMname}-${el.id} > div > div > span`).clientWidth >= document.querySelector(`.${DOMname}-${el.id} > div > div`).clientWidth) {
-								document.querySelector(`.${DOMname}-${el.id}`).classList.add('animated')
-							}
 						})
 					} else {
 						element.tasks.sort((a, b) => {
@@ -28,9 +25,6 @@ export function renderTasksOfActiveScenarioItem(DOMname) {
 						}).forEach((el) => {
 							createTaskItem(DOMname, el.id, el.text, el.data, el.isImportant)
 							watchingTasksItems()
-							if (document.querySelector(`.${DOMname}-${el.id} > div > div > span`).clientWidth >= document.querySelector(`.${DOMname}-${el.id} > div > div`).clientWidth) {
-								document.querySelector(`.${DOMname}-${el.id}`).classList.add('animated')
-							}
 						})
 					}
 				}
