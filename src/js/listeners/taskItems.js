@@ -36,6 +36,7 @@ document.querySelector('.add-task__button').addEventListener('click', () => {
 	} else if (document.querySelector('.tasks__add-task > input').value === '###DELETE ALL PARAMETERS###') {
 		localStorage.removeItem('todo-user-js');
 		document.querySelector('.tasks__add-task > input').value = ''
+		window.location.reload()
 	}
 })
 document.querySelector('.tasks__add-task > input').addEventListener('keydown', (e) => {
