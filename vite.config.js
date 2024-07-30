@@ -18,6 +18,14 @@ export default defineConfig({
 		emptyOutDir: true,
 		rollupOptions: {
 			output: {
+				manualChunks(id) {
+					if (id.includes('node_modules')) {
+						return 'vendor'
+					}
+					if (id.includes('src/components')) {
+						return id.split('/').pop().split('.')[0]
+					}
+				},
 			  assetFileNames: (assetInfo) => {
 				var info = assetInfo.name.split(".");
 				var extType = info[info.length - 1];
