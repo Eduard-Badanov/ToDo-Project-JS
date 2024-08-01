@@ -833,3 +833,6 @@ button {
 .todo {
 	/* filter: drop-shadow(0 4px 5px rgba(0, 0, 0, 0.2509803922)); */
 }
+.todo__scenarios, .scenarios__items-list {
+	filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
+}
