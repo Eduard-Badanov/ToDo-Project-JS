@@ -831,5 +831,5 @@ button {
 	background: #108554 !important;
 }
 .todo {
-	filter: drop-shadow(0 4px 5px rgba(0, 0, 0, 0.2509803922));
+	/* filter: drop-shadow(0 4px 5px rgba(0, 0, 0, 0.2509803922)); */
 }
