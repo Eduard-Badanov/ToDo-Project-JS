@@ -192,6 +192,8 @@
 	overflow-y: overlay;
 	overflow-x: hidden;
 	scroll-behavior: smooth;
+	filter: none !important;
+	box-shadow: none !important;
 }
 .scenarios__items-list::-webkit-scrollbar {
 	background: none;
