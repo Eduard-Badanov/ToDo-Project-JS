@@ -7,6 +7,8 @@
   "main": "main.js",
   "scripts": {
     "dev": "vite",
+    "host": "vite --host",
+    "offline": "vite --mode offline",
     "build": "vite build",
     "preview": "vite preview"
   },
